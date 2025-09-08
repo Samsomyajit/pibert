@@ -2,11 +2,11 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/pibert)](https://pypi.org/project/pibert/)
 [![Python Version](https://img.shields.io/pypi/pyversions/pibert)](https://pypi.org/project/pibert/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/Apache2.0)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.jcp.2024.xxxx-blue)](https://doi.org/10.1016/j.jcp.2024.xxxx)
 [![arXiv](https://img.shields.io/badge/arXiv-2408.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2408.xxxxx)
 
-![PIBERT Visual Abstract](visual_abstract.png)
+![PIBERT Visual Abstract](https://github.com/Samsomyajit/pibert/blob/main/PIBERTAbstract.png)
 
 *PIBERT: A Physics-Informed Transformer with Hybrid Spectral Embeddings for Multiscale PDE Modeling*
 
@@ -133,8 +133,7 @@ If you find PIBERT useful in your research, please cite our paper:
 @article{chakraborty2024pibert,
   title={PIBERT: A Physics-Informed Transformer with Hybrid Spectral Embeddings for Multiscale PDE Modeling},
   author={Chakraborty, Somyajit and Xizhong, Chen},
-  journal={Journal of Computational Physics},
-  year={2024}
+  year={2025}
 }
 ```
 
@@ -151,3 +150,4 @@ For support and questions, please open an issue on GitHub or contact the authors
 ---
 
 *PIBERT is developed at Shanghai Jiao Tong University, Department of Chemistry and Chemical Engineering*
+
