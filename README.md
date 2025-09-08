@@ -144,10 +144,11 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 ## Support
 
 For support and questions, please open an issue on GitHub or contact the authors:
-- Somyajit Chakraborty: [somyajit.chakraborty@example.com](mailto:somyajit.chakraborty@example.com)
-- Chen Xizhong: [chen.xizhong@example.com](mailto:chen.xizhong@example.com)
+- Somyajit Chakraborty: [somyajit.chakraborty@example.com](mailto:chksomyajit@sjtu.edu.cn)
+- Chen Xizhong: [chen.xizhong@example.com](mailto:chenxizh@sjtu.edu.cn)
 
 ---
 
 *PIBERT is developed at Shanghai Jiao Tong University, Department of Chemistry and Chemical Engineering*
+
 
