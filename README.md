@@ -139,7 +139,7 @@ If you find PIBERT useful in your research, please cite our paper:
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+Distributed under the Apache 2.0 License. See [LICENSE](LICENSE) for more information.
 
 ## Support
 
@@ -150,5 +150,6 @@ For support and questions, please open an issue on GitHub or contact the authors
 ---
 
 *PIBERT is developed at Shanghai Jiao Tong University, Department of Chemistry and Chemical Engineering*
+
 
 
