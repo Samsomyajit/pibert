@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.orig
+*.rej
+.*.swp
+*.mine
+*.py,cover
+*.py,cover
+*.pyc
+*.coverage
+.hypothesis/
+.coverage
+.tox/
+.nox/
+htmlcov/
+.pytest_cache/
+pytestdebug.log
+
+# IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Jupyter
+.ipynb_checkpoints
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+conda/

@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pibert"
+version = "0.1.0"
+description = "Physics-Informed BERT-style Transformer for Multiscale PDE Modeling"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Somyajit Chakraborty", email = "somyajit.chakraborty@example.com"},
+    {name = "Chen Xizhong", email = "chen.xizhong@example.com"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/pibert"
+"Bug Tracker" = "https://github.com/yourusername/pibert/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0.0",
+    "jupyter>=1.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+]
+full = [
+    "pywt>=1.2.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["pibert*"]
