@@ -143,7 +143,7 @@ If you find PIBERT useful in your research, please cite our paper:
 ```bibtex
 @article{chakraborty2024pibert,
   title={PIBERT: A Physics-Informed Transformer with Hybrid Spectral Embeddings for Multiscale PDE Modeling},
-  author={Chakraborty, Somyajit and Xizhong, Chen},
+  author={Chakraborty, Somyajit, Pan, Ming and Xizhong, Chen},
   year={2025}
 }
 ```
@@ -155,12 +155,14 @@ Distributed under the Apache 2.0 License. See [LICENSE](LICENSE) for more inform
 ## Support
 
 For support and questions, please open an issue on GitHub or contact the authors:
-- Somyajit Chakraborty: [somyajit.chakraborty@example.com](mailto:chksomyajit@sjtu.edu.cn)
-- Chen Xizhong: [chen.xizhong@example.com](mailto:chenxizh@sjtu.edu.cn)
+- Somyajit Chakraborty: [chksomyajit@sjtu.edu.cn](mailto:chksomyajit@sjtu.edu.cn)
+- Pan Ming: [panming@sjtu.edu.cn](mailto:panming@sjtu.edu.cn)
+- Chen Xizhong: [chenxizh@sjtu.edu.cn](mailto:chenxizh@sjtu.edu.cn)
 
 ---
 
 *PIBERT is developed at Shanghai Jiao Tong University, Department of Chemistry and Chemical Engineering*
+
 
 
 
