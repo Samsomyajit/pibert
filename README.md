@@ -6,7 +6,7 @@
 [![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.jcp.2024.xxxx-blue)](https://doi.org/10.1016/j.jcp.2024.xxxx)
 [![arXiv](https://img.shields.io/badge/arXiv-2408.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2408.xxxxx)
 
-![PIBERT Visual Abstract](https://github.com/Samsomyajit/pibert/blob/main/PIBERTAbstract.png)
+![PIBERT Visual Abstract](https://github.com/Samsomyajit/pibert/blob/main/PIBERT.png)
 
 *PIBERT: A Physics-Informed Transformer with Hybrid Spectral Embeddings for Multiscale PDE Modeling*
 
@@ -116,6 +116,17 @@ The ablation study confirms the importance of each component:
 
 Disabling the physics-biased attention mechanism leads to a significant performance drop: test MSE increases from 0.4975 to 1.3201, and NMSE jumps from 1.34 to 9.88.
 
+## PIBERT on EAGLE and CFDBench
+### EAGLE
+![EAGLE](https://github.com/Samsomyajit/pibert/blob/main/eagle.png)
+
+### Cylinder Wake
+![CFDBench Cylinder-wake](https://github.com/Samsomyajit/pibert/blob/main/cylinder.png)
+
+### CFD Bench
+![CFDBench Cylinder-wake](https://github.com/Samsomyajit/pibert/blob/main/fig_grid_clean.png)
+
+
 ## Reproducibility
 
 All results in the paper can be reproduced using the provided code. The ablation studies were verified on a GTX 3060 (12GB VRAM), while the full-scale experiments used A100 GPUs. We provide configuration files for both hardware setups.
@@ -150,6 +161,7 @@ For support and questions, please open an issue on GitHub or contact the authors
 ---
 
 *PIBERT is developed at Shanghai Jiao Tong University, Department of Chemistry and Chemical Engineering*
+
 
 
 
