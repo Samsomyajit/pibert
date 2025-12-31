@@ -1,0 +1,47 @@
+{
+  "data": { "root": "cfdb_tube_npz", "format": "npz" },
+
+  "models": ["PINN", "FNO2d", "DeepONet2d", "PIBERT"],
+  "model_cfg": {
+    "PINN":   { "hidden": 64, "layers": 6, "nu": 1e-3, "w_div": 1.0, "w_vort": 1.0 },
+    "FNO2d":  { "width": 40, "modes": 10, "depth": 4, "nu": 1e-3, "w_div": 1.0, "w_vort": 1.0 },
+    "DeepONet2d": { "branch": 128, "trunk": 128, "layers": 3, "basis": 48, "nu": 1e-3, "w_div": 1.0, "w_vort": 1.0 },
+    "PIBERT": {
+      "d": 96, "depth": 4, "heads": 4, "mlp": 384,
+      "fourier_modes": 12, "patch": 4,
+      "nu": 1e-3, "w_div": 1.0, "w_vort": 1.0
+    }
+  },
+
+  "train": {
+    "epochs": 220,
+    "batch_size": 2,
+    "seed": 42,
+    "seeds": [42],
+    "lr": 5e-4,
+    "weight_decay": 1e-4,
+    "warmup_epochs": 10,
+    "eta_min": 1e-5,
+
+    "lambda_phys": 0.0,
+    "phys_start": 60,
+    "phys_warmup": 120,
+
+    "clip_norm": 0.7,
+    "micro_batch_size": 0,
+    "device": "mps",
+    "grad_loss_w": 1e-3
+  },
+
+  "ema": { "enabled": false,  "decay": 0.999  },
+
+  "eval": {
+    "outdir": "results_tube_quick",
+    "save_n": 40,
+    "latency_reps": 0,
+    "eval_every": 20,
+    "max_val_batches": 2
+  },
+
+  "amp": { "enabled": true, "dtype": "fp16" }
+}

@@ -1,0 +1,22 @@
+{
+  "data": { "root": "cfdb_cylinder_npz", "format": "npz", "cin": 2, "cout": 2 },
+  "train": {
+    "epochs": 150,
+    "batch_size": 4,
+    "lr": 0.0005,
+    "lr_schedule": "cosine",
+    "seed": 42,
+    "device": "mps",
+    "lambda_phys": 1e-5,
+    "phys_warmup": 40,
+    "clip_grad_norm": 1.0,
+    "log_phys_ratio": true
+  },
+  "eval": { "save_n": 8, "outdir": "results_phys", "latency_reps": 50 },
+  "models": ["PIBERT","PIBERT_DeepONet2d"],
+  "model_cfg": {
+    "PIBERT": { "d": 64, "depth": 3, "heads": 4, "mlp": 256, "fourier_modes": 12 },
+    "PIBERT_DeepONet2d": { "d": 64, "depth": 3, "heads": 4, "mlp": 256, "fourier_modes": 12,
+                           "branch": 128, "layers": 3, "branch_type": "cnn" }
+  }
+}

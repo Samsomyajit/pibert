@@ -1,0 +1,47 @@
+{
+  "data": { "root": "cfdb_cavity_npz", "format": "npz" },
+
+  "models": ["PINN", "PIBERT"],
+  "model_cfg": {
+    "PINN":   { "hidden": 64, "layers": 6, "nu": 1e-3, "w_div": 1.0, "w_vort": 1.0 },
+    "PIBERT": {
+      "d": 96, "depth": 4, "heads": 4, "mlp": 384,
+      "fourier_modes": 12, "patch": 4,
+      "nu": 1e-3, "w_div": 1.0, "w_vort": 1.0
+    },
+    "PIBERT_DeepONet2d": { "d": 64, "depth": 2, "heads": 4, "mlp": 256, "fourier_modes": 8, "branch": 128, "layers": 3 },
+    "DeepONet2d": { "branch": 128, "trunk": 128, "layers": 3, "basis": 48 }
+  },
+
+  "train": {
+    "epochs": 300,
+    "batch_size": 2,
+    "seed": 42,
+    "seeds": [42],
+    "lr": 5e-4,
+    "weight_decay": 1e-4,
+    "warmup_epochs": 20,
+    "eta_min": 1e-5,
+
+    "lambda_phys": 0.0,
+    "phys_start": 80,
+    "phys_warmup": 140,
+
+    "clip_norm": 0.7,
+    "micro_batch_size": 0,
+    "device": "mps",
+    "grad_loss_w": 1e-3
+  },
+
+  "ema": { "enabled": false },
+
+  "eval": {
+    "outdir": "results_cavity",
+    "save_n": 6,
+    "latency_reps": 0,
+    "eval_every": 25,
+    "max_val_batches": 2
+  },
+
+  "amp": { "enabled": true, "dtype": "fp16" }
+}

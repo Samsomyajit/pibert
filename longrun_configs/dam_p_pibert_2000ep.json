@@ -1,0 +1,57 @@
+{
+  "data": {
+    "root": "cfdb_p_npz_dam",
+    "format": "npz"
+  },
+  "models": [
+    "PIBERT"
+  ],
+  "model_cfg": {
+    "PIBERT": {
+      "d": 128,
+      "depth": 4,
+      "heads": 4,
+      "mlp": 512,
+      "fourier_modes": 16,
+      "patch": 2,
+      "attn_dropout": 0.0,
+      "ff_dropout": 0.0,
+      "nu": 0.001,
+      "w_div": 0.0,
+      "w_vort": 0.0
+    }
+  },
+  "train": {
+    "epochs": 2000,
+    "batch_size": 2,
+    "seed": 42,
+    "seeds": [
+      42
+    ],
+    "lr": 0.0008,
+    "weight_decay": 0.0,
+    "warmup_epochs": 20,
+    "eta_min": 1e-05,
+    "lambda_phys": 0.0,
+    "phys_warmup": 0,
+    "grad_loss_w": 0.001,
+    "clip_norm": 1.0,
+    "micro_batch_size": 1,
+    "device": "mps"
+  },
+  "ema": {
+    "enabled": true,
+    "decay": 0.999
+  },
+  "eval": {
+    "outdir": "results_dam_p_pibert_2000ep",
+    "save_n": 6,
+    "latency_reps": 0,
+    "eval_every": 100,
+    "max_val_batches": 0
+  },
+  "amp": {
+    "enabled": false,
+    "dtype": "fp16"
+  }
+}

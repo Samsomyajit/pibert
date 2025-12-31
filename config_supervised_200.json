@@ -1,0 +1,43 @@
+{
+  "data": { "root": "cfdb_cylinder_npz", "format": "npz", "cin": 2, "cout": 2 },
+  "train": {
+    "seed": [42,43,44],
+    "seed_repeats": 1,                
+    "epochs": 2000,                    
+    "batch_size": 8,
+    "micro_batch_size": 2,            
+    "lr": 0.0003,
+    "weight_decay": 1e-4,
+    "warmup_epochs": 50,
+    "eta_min": 1e-5,
+    "grad_loss_w": 0.05,
+    "lambda_phys": 0.0,
+    "clip_grad_norm": 1.0,
+    "device": "mps"
+  },
+  "amp": { "enabled": true, "dtype": "fp16" },
+  "eval": {
+    "save_n": 8,
+    "outdir": "results_sup",
+    "latency_reps": 50,
+    "eval_every": 5,                  
+    "max_val_batches": 4             
+  },
+  "models": [
+    "PINN",
+    "FNO2d",
+    "DeepONet2d",
+    "PIBERT",
+    "PIBERT_FNO",
+    "PIBERT_DeepONet2d"
+  ],
+  "model_cfg": {
+    "PINN": { "hidden": 64, "layers": 5 },
+    "FNO2d": { "width": 32, "modes": 8 },
+    "DeepONet2d": { "branch": 128, "trunk": 128, "layers": 3, "basis": 48 },
+
+    "PIBERT": { "d": 128, "depth": 4, "heads": 4, "mlp": 512, "fourier_modes": 16, "patch": 4 },
+    "PIBERT_FNO": { "d": 64, "depth": 2, "heads": 4, "mlp": 256, "fourier_modes": 8, "width": 28, "modes": 8 },
+    "PIBERT_DeepONet2d": { "d": 64, "depth": 2, "heads": 4, "mlp": 256, "fourier_modes": 8, "branch": 128, "layers": 3 }
+  }
+}

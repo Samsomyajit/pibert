@@ -1,0 +1,44 @@
+{
+  "data": { "root": "plasma_npz", "format": "npz" },
+
+  "models": ["PINN", "PIBERT"],
+  "model_cfg": {
+    "PINN":   { "hidden": 64,  "layers": 5, "nu": 1e-3, "w_div": 0.0, "w_vort": 0.0 },
+    "PIBERT": {
+      "d": 96, "depth": 4, "heads": 4, "mlp": 384,
+      "fourier_modes": 12, "patch": 2,
+      "nu": 1e-3, "w_div": 0.0, "w_vort": 0.0
+    }
+  },
+
+  "train": {
+    "epochs": 200,
+    "batch_size": 2,
+    "seed": 42,
+    "seeds": [42],
+    "lr": 3e-4,
+    "weight_decay": 0.0,
+    "warmup_epochs": 5,
+    "eta_min": 1e-5,
+
+    "lambda_phys": 0.0,
+    "phys_warmup": 0,
+    "grad_loss_w": 0.0,
+
+    "clip_norm": 1.0,
+    "micro_batch_size": 0,
+    "device": "auto"
+  },
+
+  "ema": { "enabled": false },
+
+  "eval": {
+    "outdir": "results_plasma_quick",
+    "save_n": 4,
+    "latency_reps": 0,
+    "eval_every": 5,
+    "max_val_batches": 2
+  },
+
+  "amp": { "enabled": true, "dtype": "fp16" }
+}

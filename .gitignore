@@ -1,0 +1,30 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Large datasets and outputs (repo root only)
+/cfdb_*/
+/checkpoints/
+/eagle_raw/
+/eagle_npz_spline/
+/eagle_subset/
+/hf_cfdb/
+/plasma_normal_data/
+/plasma_npz/
+/results*/
+/encoder_exports*/
+/embeddings/
+/fig_data/
+/fig2/
+
+# Large archives / arrays
+*.zip
+*.tar.gz
+*.tgz
+*.npy
+*.npz
+
+# Local data artifacts
+/ecp_roc.csv
+/test_commentary.md
+/file.mmd

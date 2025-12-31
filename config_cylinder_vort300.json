@@ -1,0 +1,45 @@
+{
+  "data": { "root": "cfdb_cylinder_npz", "format": "npz" },
+
+  "models": ["PINN", "PIBERT"],
+  "model_cfg": {
+    "PINN":   { "hidden": 64, "layers": 6, "nu": 1e-3, "w_div": 1.0, "w_vort": 1.0 },
+    "PIBERT": {
+      "d": 96, "depth": 4, "heads": 4, "mlp": 384,
+      "fourier_modes": 12, "patch": 4,
+      "nu": 1e-3, "w_div": 1.0, "w_vort": 1.0
+    }
+  },
+
+  "train": {
+    "epochs": 700,
+    "batch_size": 2,
+    "seed": 42,
+    "seeds": [42],
+    "lr": 8e-4,
+    "weight_decay": 0.0,
+    "warmup_epochs": 20,
+    "eta_min": 1e-5,
+
+    "lambda_phys": 0.0,
+    "phys_start": 0,
+    "phys_warmup": 0,
+
+    "clip_norm": 1.0,
+    "micro_batch_size": 1,
+    "device": "mps",
+    "grad_loss_w": 5e-4
+  },
+
+  "ema": { "enabled": false, "decay": 0.999 },
+
+  "eval": {
+    "outdir": "results_cylinder_vort300",
+    "save_n": 8,
+    "latency_reps": 0,
+    "eval_every": 20,
+    "max_val_batches": 0
+  },
+
+  "amp": { "enabled": true, "dtype": "fp16" }
+}

@@ -1,0 +1,43 @@
+{
+  "data": {
+    "root": "cfdb_cylinder_npz",
+    "format": "npz",
+    "cin": 2,
+    "cout": 2
+  },
+"train": {
+  "epochs": 10,
+  "batch_size": 4,
+  "lr": 3e-4,
+  "seed": 42,
+  "device": "mps",
+  "lambda_phys": 0,          
+  "phys_warmup": 15,            
+  "clip_norm": 1.0,             
+  "nu": 1e-3,
+  "w_cont": 1.0,
+  "w_vort": 1.0
+},
+  "eval": { 
+  "latency_reps": 50, 
+  "save_n": 8, 
+  "outdir": "results" 
+  },
+  "models": [
+    "PINN",
+    "FNO2d",
+    "DeepONet2d",
+    "PIBERT",
+    "PIBERT_FNO",
+    "PIBERT_DeepONet2d"
+  ],
+  "model_cfg": {
+    "PINN": { "hidden": 64, "layers": 5 },
+    "FNO2d": { "width": 32, "modes": 8 },
+    "DeepONet2d": { "branch": 128, "trunk": 128, "layers": 3, "basis": 48 },
+
+    "PIBERT": { "d": 64, "depth": 2, "heads": 4, "mlp": 256, "fourier_modes": 8 },
+    "PIBERT_FNO": { "d": 64, "depth": 2, "heads": 4, "mlp": 256, "fourier_modes": 8, "width": 28, "modes": 8 },
+    "PIBERT_DeepONet2d": { "d": 64, "depth": 2, "heads": 4, "mlp": 256, "fourier_modes": 8, "branch": 128, "layers": 3 }
+  }
+}

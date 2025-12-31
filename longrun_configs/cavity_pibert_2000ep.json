@@ -1,0 +1,56 @@
+{
+  "data": {
+    "root": "cfdb_cavity_npz",
+    "format": "npz"
+  },
+  "models": [
+    "PIBERT"
+  ],
+  "model_cfg": {
+    "PIBERT": {
+      "d": 96,
+      "depth": 4,
+      "heads": 4,
+      "mlp": 384,
+      "fourier_modes": 12,
+      "patch": 4,
+      "nu": 0.001,
+      "w_div": 1.0,
+      "w_vort": 1.0
+    }
+  },
+  "train": {
+    "epochs": 2000,
+    "batch_size": 2,
+    "seed": 42,
+    "seeds": [
+      42
+    ],
+    "lr": 0.0005,
+    "weight_decay": 0.0001,
+    "warmup_epochs": 20,
+    "eta_min": 1e-05,
+    "lambda_phys": 0.0,
+    "phys_start": 80,
+    "phys_warmup": 140,
+    "clip_norm": 0.7,
+    "micro_batch_size": 0,
+    "device": "mps",
+    "grad_loss_w": 0.001
+  },
+  "ema": {
+    "enabled": true,
+    "decay": 0.999
+  },
+  "eval": {
+    "outdir": "results_cavity_pibert_2000ep",
+    "save_n": 6,
+    "latency_reps": 0,
+    "eval_every": 100,
+    "max_val_batches": 0
+  },
+  "amp": {
+    "enabled": true,
+    "dtype": "fp16"
+  }
+}

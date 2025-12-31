@@ -1,0 +1,63 @@
+{
+  "data": { "root": "cfdb_cylinder_npz", "format": "npz" },
+
+  "models": ["PIBERT"],
+  "model_cfg": {
+    "PIBERT": {
+      "d": 96,
+      "depth": 4,
+      "heads": 4,
+      "mlp": 384,
+      "fourier_modes": 12,
+      "patch": 4,
+      "nu": 1e-3,
+      "w_div": 1.0,
+      "w_vort": 1.0
+    }
+  },
+
+  "train": {
+    "epochs": 700,
+    "batch_size": 2,
+    "seed": 42,
+    "seeds": [42],
+    "lr": 3e-4,
+    "weight_decay": 1e-4,
+    "warmup_epochs": 5,
+    "eta_min": 1e-5,
+
+    "lambda_phys": 0.0,
+    "phys_start": 0,
+    "phys_warmup": 0,
+
+    "clip_norm": 0.5,
+    "micro_batch_size": 0,
+    "device": "mps",
+    "grad_loss_w": 0.0
+  },
+
+  "mpp": {
+    "enabled": true,
+    "mask_ratio": 0.15,
+    "lambda_mpp": 1.0,
+    "lambda_div": 0.1
+  },
+
+  "ecp": {
+    "enabled": true,
+    "lambda_ecp": 0.5,
+    "invalid_strategy": "noise"
+  },
+
+  "ema": { "enabled": false, "decay": 0.999 },
+
+  "eval": {
+    "outdir": "results_cylinder_pibert_200",
+    "save_n": 100,
+    "latency_reps": 0,
+    "eval_every": 5,
+    "max_val_batches": 4
+  },
+
+  "amp": { "enabled": true, "dtype": "fp16" }
+}

@@ -1,0 +1,28 @@
+{
+  "data": { "root": "cfdb_p_npz_tb", "format": "npz" },
+
+  "models": ["PINN", "PIBERT"],
+  "model_cfg": {
+    "PINN":   { "hidden": 64,  "layers": 5, "nu": 1e-3, "w_div": 0.0, "w_vort": 0.0 },
+    "PIBERT": {
+      "d": 128, "depth": 4, "heads": 4, "mlp": 512,
+      "fourier_modes": 16, "patch": 2,
+      "attn_dropout": 0.0, "ff_dropout": 0.0,
+      "nu": 1e-3, "w_div": 0.0, "w_vort": 0.0
+    }
+  },
+
+  "train": {
+    "epochs": 200, "batch_size": 2, "seed": 42, "seeds": [42],
+    "lr": 8e-4, "weight_decay": 0.0, "warmup_epochs": 20, "eta_min": 1e-5,
+    "lambda_phys": 0.0, "phys_warmup": 80, "grad_loss_w": 5e-4,
+    "clip_norm": 1.0, "micro_batch_size": 1, "device": "mps"
+  },
+
+  "ema":  { "enabled": false, "decay": 0.999 },
+
+  "eval": { "outdir": "results_tube_p", "save_n": 6, "latency_reps": 0,
+            "eval_every": 50, "max_val_batches": 0 },
+
+  "amp": { "enabled": true, "dtype": "fp16" }
+}
