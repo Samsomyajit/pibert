@@ -138,7 +138,7 @@ jupyter notebook examples/ablation_study_gpu.ipynb
 
 ## Citing PIBERT
 
-If you find PIBERT useful in your research, please cite our paper:
+If you find PIBERT useful in your research, please cite our paper: [!Link](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6203487)
 
 ```bibtex
 @article{chakraborty6203487pibert,
@@ -162,6 +162,7 @@ For support and questions, please open an issue on GitHub or contact the authors
 ---
 
 *PIBERT is developed at Shanghai Jiao Tong University, Department of Chemistry and Chemical Engineering*
+
 
 
 
