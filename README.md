@@ -141,10 +141,10 @@ jupyter notebook examples/ablation_study_gpu.ipynb
 If you find PIBERT useful in your research, please cite our paper:
 
 ```bibtex
-@article{chakraborty2024pibert,
-  title={PIBERT: A Physics-Informed Transformer with Hybrid Spectral Embeddings for Multiscale PDE Modeling},
-  author={Chakraborty, Somyajit, Pan, Ming and Xizhong, Chen},
-  year={2025}
+@article{chakraborty6203487pibert,
+  title={PIBERT: A Physics-Informed Bi-directional Hybrid Spectral Transformer for Multiscale CFD Surrogate Modeling},
+  author={Chakraborty, Somyajit and Pan, Ming and Chen, Xizhong},
+  journal={Available at SSRN 6203487}
 }
 ```
 
@@ -162,6 +162,7 @@ For support and questions, please open an issue on GitHub or contact the authors
 ---
 
 *PIBERT is developed at Shanghai Jiao Tong University, Department of Chemistry and Chemical Engineering*
+
 
 
 
