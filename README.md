@@ -130,6 +130,70 @@ Disabling the physics-biased attention mechanism leads to a significant performa
 ### CFD Bench
 ![CFDBench Cylinder-wake](https://github.com/Samsomyajit/pibert/blob/main/fig_grid_clean.png)
 
+---
+
+## RealPDEBench Results
+
+PIBERT was evaluated on the **RealPDEBench** benchmark suite covering two challenging real-world fluid dynamics datasets: Cylinder Wake and Fluid-Structure Interaction (FSI).
+
+### Cylinder Wake (Real)
+
+All-component metrics (u + v combined):
+
+| Model | MSE | NMSE | LMAE | LPCC | R² |
+|-------|-----|------|------|------|----|
+| PINN | 0.4269 | 0.3994 | 0.2929 | 0.7749 | 0.6005 |
+| DeepONet2d | 0.2122 | 0.1985 | 0.2619 | 0.8966 | 0.8015 |
+| PITT | 0.1254 | 0.1173 | 0.1910 | 0.9412 | 0.8827 |
+| FourierFlow | 0.0634 | 0.0593 | 0.1180 | 0.9699 | 0.9407 |
+| FNO2d | 0.0642 | 0.0600 | 0.1322 | 0.9696 | 0.9400 |
+| **PIBERT** | **0.0628** | **0.0587** | **0.1145** | **0.9702** | **0.9412** |
+
+#### Model Overview — Cylinder Real
+![Cylinder Real Overview](https://github.com/Samsomyajit/pibert/blob/main/FIGURE/main_cylinder_overview.png)
+
+#### Predicted Fields — Cylinder Real
+![Cylinder Real Fields](https://github.com/Samsomyajit/pibert/blob/main/FIGURE/main_cylinder_pibert_fields.png)
+
+#### Metrics Comparison — Cylinder Real
+![Cylinder Real Metrics](https://github.com/Samsomyajit/pibert/blob/main/FIGURE/main_cylinder_metrics.png)
+
+#### Multiscale Analysis — Cylinder Real
+![Cylinder Real Multiscale](https://github.com/Samsomyajit/pibert/blob/main/FIGURE/main_cylinder_multiscale.png)
+
+---
+
+### Fluid-Structure Interaction (FSI Real)
+
+All-component metrics (u + v combined):
+
+| Model | MSE | NMSE | LMAE | LPCC | R² |
+|-------|-----|------|------|------|----|
+| PITT | 0.03580 | 0.04690 | 0.10134 | 0.9761 | 0.9528 |
+| DeepONet2d | 0.08029 | 0.10518 | 0.17215 | 0.9456 | 0.8941 |
+| PINN | 0.000442 | 0.000580 | 0.011629 | 0.9997 | 0.9994 |
+| FNO2d | 0.001716 | 0.002248 | 0.027409 | 0.9989 | 0.9977 |
+| FourierFlow | 0.000307 | 0.000402 | 0.010626 | 0.9998 | 0.9996 |
+| **PIBERT** | **0.000206** | **0.000270** | **0.008640** | **0.9999** | **0.9997** |
+
+#### Model Overview — FSI Real
+![FSI Real Overview](https://github.com/Samsomyajit/pibert/blob/main/FIGURE/main_fsi_overview.png)
+
+#### Predicted Fields — FSI Real
+![FSI Real Fields](https://github.com/Samsomyajit/pibert/blob/main/FIGURE/main_fsi_pibert_fields.png)
+
+#### Metrics Comparison — FSI Real
+![FSI Real Metrics](https://github.com/Samsomyajit/pibert/blob/main/FIGURE/main_fsi_metrics.png)
+
+#### Multiscale Analysis — FSI Real
+![FSI Real Multiscale](https://github.com/Samsomyajit/pibert/blob/main/FIGURE/main_fsi_multiscale.png)
+
+---
+
+### Training Convergence
+![Training Convergence](https://github.com/Samsomyajit/pibert/blob/main/FIGURE/main_training_convergence.png)
+
+---
 
 ## Reproducibility
 
