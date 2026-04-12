@@ -6,7 +6,7 @@
 [![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.jcp.2024.xxxx-blue)](https://doi.org/10.1016/j.jcp.2024.xxxx)
 [![arXiv](https://img.shields.io/badge/arXiv-2408.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2408.xxxxx)
 
-![PIBERT Visual Abstract](https://github.com/Samsomyajit/pibert/blob/main/PIBERT.png)
+![PIBERT Visual Abstract](https://github.com/Samsomyajit/pibert/blob/main/FIGURE/pibert_methodology_figure%20(1).png)
 
 *PIBERT: A Physics-Informed Transformer with Hybrid Spectral Embeddings for Multiscale PDE Modeling*
 
