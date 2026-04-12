@@ -403,6 +403,52 @@
             color: #ef4444;
             font-weight: bold;
         }
+
+        /* GIF / Animation Section */
+        .gif-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .gif-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+        }
+
+        .gif-item:hover {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .gif-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gif-item .caption {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        /* Results section tables */
+        .results-section {
+            background: var(--bg-light);
+        }
+
+        .tab-note {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -414,6 +460,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#performance">Performance</a></li>
+                <li><a href="#results">Results</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#installation">Installation</a></li>
                 <li><a href="#citation">Citation</a></li>
@@ -677,6 +724,296 @@
         </div>
     </section>
 
+    <!-- TheRealPDEBench Results Section -->
+    <section id="results" class="results-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>TheRealPDEBench Results</h2>
+                <p>PIBERT evaluated on real-world fluid simulation benchmarks: Cylinder Wake and Fluid–Structure Interaction (FSI)</p>
+            </div>
+
+            <h3 style="margin-bottom: 1rem; color: var(--primary-color);">Cylinder Wake — All-Component Metrics</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>MSE (All)</th>
+                            <th>NMSE (All)</th>
+                            <th>LMAE (All)</th>
+                            <th>LPCC (All)</th>
+                            <th>R² (All)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #dbeafe;">
+                            <td class="best-result">PIBERT</td>
+                            <td class="best-result">0.06280</td>
+                            <td class="best-result">0.05875</td>
+                            <td class="best-result">0.11448</td>
+                            <td class="best-result">0.97019</td>
+                            <td class="best-result">0.94123</td>
+                        </tr>
+                        <tr>
+                            <td>FourierFlow</td>
+                            <td>0.06341</td>
+                            <td>0.05931</td>
+                            <td>0.11797</td>
+                            <td>0.96989</td>
+                            <td>0.94066</td>
+                        </tr>
+                        <tr>
+                            <td>FNO2d</td>
+                            <td>0.06417</td>
+                            <td>0.06003</td>
+                            <td>0.13216</td>
+                            <td>0.96959</td>
+                            <td>0.93995</td>
+                        </tr>
+                        <tr>
+                            <td>PITT</td>
+                            <td>0.12538</td>
+                            <td>0.11729</td>
+                            <td>0.19095</td>
+                            <td>0.94118</td>
+                            <td>0.88267</td>
+                        </tr>
+                        <tr>
+                            <td>DeepONet2d</td>
+                            <td>0.21216</td>
+                            <td>0.19846</td>
+                            <td>0.26190</td>
+                            <td>0.89658</td>
+                            <td>0.80146</td>
+                        </tr>
+                        <tr>
+                            <td>PINN</td>
+                            <td>0.42694</td>
+                            <td>0.39938</td>
+                            <td>0.29292</td>
+                            <td>0.77492</td>
+                            <td>0.60046</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="tab-note">PIBERT achieves best LMAE, NMSE, LPCC, and R² on Cylinder Wake (real-world). Lower is better for MSE/NMSE/LMAE; higher is better for LPCC/R².</p>
+
+            <h3 style="margin: 2.5rem 0 1rem; color: var(--primary-color);">FSI (Fluid–Structure Interaction) — All-Component Metrics</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>MSE (All)</th>
+                            <th>NMSE (All)</th>
+                            <th>LMAE (All)</th>
+                            <th>LPCC (All)</th>
+                            <th>R² (All)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #dbeafe;">
+                            <td class="best-result">PIBERT</td>
+                            <td class="best-result">0.000206</td>
+                            <td class="best-result">0.000270</td>
+                            <td class="best-result">0.008640</td>
+                            <td class="best-result">0.999864</td>
+                            <td class="best-result">0.999729</td>
+                        </tr>
+                        <tr>
+                            <td>FourierFlow</td>
+                            <td>0.000307</td>
+                            <td>0.000402</td>
+                            <td>0.010626</td>
+                            <td>0.999797</td>
+                            <td>0.999595</td>
+                        </tr>
+                        <tr>
+                            <td>PINN</td>
+                            <td>0.000442</td>
+                            <td>0.000580</td>
+                            <td>0.011629</td>
+                            <td>0.999708</td>
+                            <td>0.999416</td>
+                        </tr>
+                        <tr>
+                            <td>FNO2d</td>
+                            <td>0.001716</td>
+                            <td>0.002248</td>
+                            <td>0.027409</td>
+                            <td>0.998873</td>
+                            <td>0.997736</td>
+                        </tr>
+                        <tr>
+                            <td>DeepONet2d</td>
+                            <td>0.080288</td>
+                            <td>0.105176</td>
+                            <td>0.172149</td>
+                            <td>0.945567</td>
+                            <td>0.894091</td>
+                        </tr>
+                        <tr>
+                            <td>PITT</td>
+                            <td>0.035803</td>
+                            <td>0.046901</td>
+                            <td>0.101337</td>
+                            <td>0.976101</td>
+                            <td>0.952772</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="tab-note">PIBERT achieves best performance on all FSI metrics. Significant margin over baselines on NMSE (0.000270 vs. next-best 0.000402).</p>
+
+            <h3 style="margin: 2.5rem 0 1rem; color: var(--primary-color);">Cylinder Wake — Per-Component Breakdown</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>MSE (u)</th>
+                            <th>MSE (v)</th>
+                            <th>NMSE (u)</th>
+                            <th>NMSE (v)</th>
+                            <th>R² (u)</th>
+                            <th>R² (v)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #dbeafe;">
+                            <td class="best-result">PIBERT</td>
+                            <td class="best-result">0.03321</td>
+                            <td class="best-result">0.09240</td>
+                            <td class="best-result">0.02993</td>
+                            <td class="best-result">0.08984</td>
+                            <td class="best-result">0.97002</td>
+                            <td class="best-result">0.91016</td>
+                        </tr>
+                        <tr>
+                            <td>FourierFlow</td>
+                            <td>0.03023</td>
+                            <td>0.09658</td>
+                            <td>0.02725</td>
+                            <td>0.09391</td>
+                            <td>0.97271</td>
+                            <td>0.90609</td>
+                        </tr>
+                        <tr>
+                            <td>FNO2d</td>
+                            <td>0.03439</td>
+                            <td>0.09394</td>
+                            <td>0.03100</td>
+                            <td>0.09134</td>
+                            <td>0.96895</td>
+                            <td>0.90866</td>
+                        </tr>
+                        <tr>
+                            <td>PITT</td>
+                            <td>0.06295</td>
+                            <td>0.18781</td>
+                            <td>0.05673</td>
+                            <td>0.18261</td>
+                            <td>0.94317</td>
+                            <td>0.81739</td>
+                        </tr>
+                        <tr>
+                            <td>DeepONet2d</td>
+                            <td>0.10205</td>
+                            <td>0.32226</td>
+                            <td>0.09198</td>
+                            <td>0.31334</td>
+                            <td>0.90787</td>
+                            <td>0.68666</td>
+                        </tr>
+                        <tr>
+                            <td>PINN</td>
+                            <td>0.09934</td>
+                            <td>0.75454</td>
+                            <td>0.08954</td>
+                            <td>0.73364</td>
+                            <td>0.91032</td>
+                            <td>0.26636</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="margin: 2.5rem 0 1rem; color: var(--primary-color);">FSI — Per-Component Breakdown</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>MSE (u)</th>
+                            <th>MSE (v)</th>
+                            <th>NMSE (u)</th>
+                            <th>NMSE (v)</th>
+                            <th>R² (u)</th>
+                            <th>R² (v)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #dbeafe;">
+                            <td class="best-result">PIBERT</td>
+                            <td class="best-result">0.000103</td>
+                            <td class="best-result">0.000309</td>
+                            <td class="best-result">0.000143</td>
+                            <td class="best-result">0.000381</td>
+                            <td class="best-result">0.999851</td>
+                            <td class="best-result">0.999619</td>
+                        </tr>
+                        <tr>
+                            <td>FourierFlow</td>
+                            <td>0.000141</td>
+                            <td>0.000473</td>
+                            <td>0.000197</td>
+                            <td>0.000584</td>
+                            <td>0.999796</td>
+                            <td>0.999416</td>
+                        </tr>
+                        <tr>
+                            <td>PINN</td>
+                            <td>0.000156</td>
+                            <td>0.000729</td>
+                            <td>0.000218</td>
+                            <td>0.000899</td>
+                            <td>0.999774</td>
+                            <td>0.999100</td>
+                        </tr>
+                        <tr>
+                            <td>FNO2d</td>
+                            <td>0.001486</td>
+                            <td>0.001947</td>
+                            <td>0.002074</td>
+                            <td>0.002402</td>
+                            <td>0.997846</td>
+                            <td>0.997597</td>
+                        </tr>
+                        <tr>
+                            <td>DeepONet2d</td>
+                            <td>0.036055</td>
+                            <td>0.124522</td>
+                            <td>0.050325</td>
+                            <td>0.153672</td>
+                            <td>0.947739</td>
+                            <td>0.846269</td>
+                        </tr>
+                        <tr>
+                            <td>PITT</td>
+                            <td>0.017610</td>
+                            <td>0.053995</td>
+                            <td>0.024581</td>
+                            <td>0.066635</td>
+                            <td>0.974474</td>
+                            <td>0.933340</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <div class="container">
@@ -685,12 +1022,160 @@
                 <p>PIBERT's performance on various benchmark problems</p>
             </div>
 
+            <!-- Main Paper Figures -->
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Main Paper Figures</h3>
+            <div class="gallery-grid" style="margin-bottom: 3rem;">
+                <div class="gallery-item">
+                    <img src="FIGURE/FIGURE1.png" alt="Figure 1">
+                    <div class="caption">Figure 1: PIBERT Architecture Overview</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="FIGURE/FIGURE2.png" alt="Figure 2">
+                    <div class="caption">Figure 2: Hybrid Spectral Embedding</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="FIGURE/FIGURE3.png" alt="Figure 3">
+                    <div class="caption">Figure 3: Physics-Biased Attention</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="FIGURE/FIGURE4.png" alt="Figure 4">
+                    <div class="caption">Figure 4: Pretraining Tasks (MPP &amp; ECP)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="FIGURE/FIGURE5.png" alt="Figure 5">
+                    <div class="caption">Figure 5: Model Performance Summary</div>
+                </div>
+            </div>
+
+            <!-- Cylinder Wake RealPDEBench Figures -->
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Cylinder Wake — RealPDEBench</h3>
+            <div class="gallery-grid" style="margin-bottom: 2rem;">
+                <div class="gallery-item">
+                    <img src="figures_rpb_final/jcp_struct_fig13_all_models_overview_cylinder_real.png" alt="All Models Overview - Cylinder">
+                    <div class="caption">All Models Overview (Cylinder Wake)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_final/jcp_struct_fig13_fields_cylinder_real.png" alt="Field Predictions - Cylinder">
+                    <div class="caption">Field Predictions (Cylinder Wake)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_final/jcp_struct_fig14_metrics_cylinder_real.png" alt="Metrics - Cylinder">
+                    <div class="caption">Quantitative Metrics (Cylinder Wake)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_final/jcp_struct_fig15_timestep_predictions_cylinder_real.png" alt="Timestep Predictions - Cylinder">
+                    <div class="caption">Timestep Predictions (Cylinder Wake)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_final/jcp_struct_fig15_pointwise_traces_cylinder_real.png" alt="Pointwise Traces - Cylinder">
+                    <div class="caption">Pointwise Traces (Cylinder Wake)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_final/rpb_cylinder_frmse_bands.png" alt="FRMSE Bands - Cylinder">
+                    <div class="caption">FRMSE Frequency Bands (Cylinder Wake)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_final/rpb_cylinder_sequence_metrics.png" alt="Sequence Metrics - Cylinder">
+                    <div class="caption">Sequence Metrics Over Time (Cylinder Wake)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_final/jcp_struct_perf_scatter_cylinder_real.png" alt="Performance Scatter - Cylinder">
+                    <div class="caption">Performance Scatter Plot (Cylinder Wake)</div>
+                </div>
+            </div>
+
+            <!-- Cylinder Reviewer Figures -->
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Cylinder Wake — Multiscale Cross-Sections</h3>
+            <div class="gallery-grid" style="margin-bottom: 3rem;">
+                <div class="gallery-item">
+                    <img src="figures_rpb_final/reviewer_multiscale_crosssections_main.png" alt="Multiscale Cross-Sections">
+                    <div class="caption">Multiscale Cross-Sections (Main)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_final/reviewer_multiscale_crosssections_multisample.png" alt="Multisample Cross-Sections">
+                    <div class="caption">Multisample Cross-Sections</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_final/reviewer_cylinder_drag_all_models.png" alt="Cylinder Drag Comparison">
+                    <div class="caption">Drag Coefficient: All Models</div>
+                </div>
+            </div>
+
+            <!-- FSI RealPDEBench Figures -->
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">FSI (Fluid–Structure Interaction) — RealPDEBench</h3>
+            <div class="gallery-grid" style="margin-bottom: 2rem;">
+                <div class="gallery-item">
+                    <img src="figures_rpb_fsi_real_final_v2/jcp_struct_fig13_all_models_overview_fsi_real.png" alt="All Models Overview - FSI">
+                    <div class="caption">All Models Overview (FSI)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_fsi_real_final_v2/jcp_struct_fig13_fields_fsi_real.png" alt="Field Predictions - FSI">
+                    <div class="caption">Field Predictions (FSI)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_fsi_real_final_v2/jcp_struct_fig14_metrics_fsi_real.png" alt="Metrics - FSI">
+                    <div class="caption">Quantitative Metrics (FSI)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_fsi_real_final_v2/jcp_struct_fig15_timestep_predictions_fsi_real.png" alt="Timestep Predictions - FSI">
+                    <div class="caption">Timestep Predictions (FSI)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_fsi_real_final_v2/jcp_struct_fig15_pointwise_traces_fsi_real.png" alt="Pointwise Traces - FSI">
+                    <div class="caption">Pointwise Traces (FSI)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_fsi_real_final_v2/jcp_struct_perf_scatter_fsi_real.png" alt="Performance Scatter - FSI">
+                    <div class="caption">Performance Scatter Plot (FSI)</div>
+                </div>
+            </div>
+
+            <!-- FSI Reviewer Figures -->
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">FSI — Multiscale Cross-Sections</h3>
+            <div class="gallery-grid" style="margin-bottom: 3rem;">
+                <div class="gallery-item">
+                    <img src="figures_rpb_fsi_real_final_v2/reviewer_multiscale_crosssections_main.png" alt="FSI Multiscale Cross-Sections">
+                    <div class="caption">Multiscale Cross-Sections (FSI Main)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_fsi_real_final_v2/reviewer_multiscale_crosssections_multisample.png" alt="FSI Multisample Cross-Sections">
+                    <div class="caption">Multisample Cross-Sections (FSI)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="figures_rpb_fsi_real_final_v2/jcp_struct_bandratio_psd_fsi_real.png" alt="Band Ratio PSD - FSI">
+                    <div class="caption">Band Ratio PSD (FSI)</div>
+                </div>
+            </div>
+
+            <!-- GIF Animations -->
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Animated Predictions — Cylinder Wake Timesteps</h3>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Side-by-side comparisons of ground truth vs. PIBERT predictions over time</p>
+            <div class="gif-grid" style="margin-bottom: 3rem;">
+                <div class="gif-item">
+                    <img src="figures_rpb_final/jcp_struct_fig15_timestep_predictions_u_cylinder_real.gif" alt="U-Velocity Animation">
+                    <div class="caption">🌊 U-Velocity Component (Cylinder Wake)</div>
+                </div>
+                <div class="gif-item">
+                    <img src="figures_rpb_final/jcp_struct_fig15_timestep_predictions_v_cylinder_real.gif" alt="V-Velocity Animation">
+                    <div class="caption">🌊 V-Velocity Component (Cylinder Wake)</div>
+                </div>
+                <div class="gif-item">
+                    <img src="figures_rpb_final/jcp_struct_fig15_timestep_predictions_uv_cylinder_real.gif" alt="UV Combined Animation">
+                    <div class="caption">🌊 UV Combined (Cylinder Wake)</div>
+                </div>
+                <div class="gif-item">
+                    <img src="figures_rpb_final/jcp_struct_fig15_timestep_predictions_omega_cylinder_real.gif" alt="Vorticity Animation">
+                    <div class="caption">🌀 Vorticity ω (Cylinder Wake)</div>
+                </div>
+            </div>
+
+            <!-- Legacy / Other Visualizations -->
             <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">EAGLE Benchmark</h3>
             <div style="text-align: center; margin-bottom: 3rem;">
                 <img src="eagle.png" alt="EAGLE Results" style="max-width: 100%; border-radius: 10px; box-shadow: var(--shadow);">
             </div>
 
-            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Cylinder Wake Flow</h3>
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Cylinder Wake Flow (Legacy)</h3>
             <div style="text-align: center; margin-bottom: 3rem;">
                 <img src="cylinder.png" alt="Cylinder Wake" style="max-width: 100%; border-radius: 10px; box-shadow: var(--shadow);">
             </div>
