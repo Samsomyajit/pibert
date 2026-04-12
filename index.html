@@ -18,10 +18,35 @@
             --accent-color: #3b82f6;
             --text-dark: #1e293b;
             --text-light: #64748b;
-            --bg-light: #f8fafc;
+            --bg-light: #f0f4ff;
             --bg-white: #ffffff;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+            --card-bg: #ffffff;
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --nav-border: rgba(0, 0, 0, 0.05);
+            --shadow: 0 10px 40px rgba(37, 99, 235, 0.12);
+            --shadow-hover: 0 20px 60px rgba(37, 99, 235, 0.22);
+            --border-color: #e2e8f0;
+            --hero-gradient: linear-gradient(135deg, #1a1aff 0%, #6c2bd9 50%, #c026d3 100%);
+            --code-bg: #0f172a;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #60a5fa;
+            --secondary-color: #93c5fd;
+            --accent-color: #818cf8;
+            --text-dark: #f1f5f9;
+            --text-light: #94a3b8;
+            --bg-light: #1e293b;
+            --bg-white: #0f172a;
+            --card-bg: #1e293b;
+            --nav-bg: rgba(15, 23, 42, 0.97);
+            --nav-border: rgba(255, 255, 255, 0.06);
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.7);
+            --border-color: #334155;
+            --hero-gradient: linear-gradient(135deg, #0f0a2e 0%, #3b1a6b 50%, #7c1b8a 100%);
+            --code-bg: #020817;
         }
 
         body {
@@ -29,6 +54,7 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--bg-white);
+            transition: background-color 0.4s ease, color 0.4s ease;
         }
 
         /* Navigation */
@@ -36,11 +62,13 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px var(--nav-border);
             z-index: 1000;
             padding: 1rem 0;
+            transition: background 0.4s ease;
         }
 
         nav .container {
@@ -53,26 +81,59 @@
         }
 
         nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: var(--hero-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.75rem;
+            align-items: center;
         }
 
         nav a {
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 500;
-            transition: color 0.3s;
+            transition: var(--transition);
+            font-size: 0.95rem;
         }
 
         nav a:hover {
             color: var(--primary-color);
+        }
+
+        /* Dark/Light Mode Toggle */
+        .theme-toggle {
+            background: var(--bg-light);
+            border: 1.5px solid var(--border-color);
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .theme-toggle:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .theme-toggle .icon {
+            font-size: 1rem;
         }
 
         /* Container */
@@ -90,22 +151,45 @@
         .hero {
             padding-top: 8rem;
             padding-bottom: 6rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--hero-gradient);
             color: white;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.08) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 20%, rgba(255,255,255,0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 0.75rem;
+            letter-spacing: -2px;
             animation: fadeInUp 0.8s ease-out;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.3);
         }
 
         .hero .subtitle {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 2rem;
-            opacity: 0.95;
+            opacity: 0.92;
             animation: fadeInUp 0.8s ease-out 0.2s both;
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero .badges {
@@ -118,15 +202,16 @@
         }
 
         .hero .badges img {
-            height: 20px;
+            height: 22px;
+            border-radius: 4px;
         }
 
         .hero-image {
-            max-width: 800px;
+            max-width: 850px;
             width: 100%;
-            margin: 2rem auto;
-            border-radius: 10px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            margin: 2.5rem auto;
+            border-radius: 16px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.1);
             animation: fadeInUp 0.8s ease-out 0.6s both;
         }
 
@@ -134,38 +219,42 @@
             display: flex;
             justify-content: center;
             gap: 1rem;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             animation: fadeInUp 0.8s ease-out 0.8s both;
         }
 
         .btn {
-            padding: 0.8rem 2rem;
-            border-radius: 5px;
+            padding: 0.85rem 2.2rem;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
+            font-weight: 700;
+            transition: var(--transition);
             display: inline-block;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
         }
 
         .btn-primary {
             background: white;
-            color: var(--primary-color);
+            color: #6c2bd9;
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         }
 
         .btn-secondary {
-            background: transparent;
+            background: rgba(255,255,255,0.12);
             color: white;
-            border: 2px solid white;
+            border: 2px solid rgba(255,255,255,0.7);
+            backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
             background: white;
-            color: var(--primary-color);
+            color: #6c2bd9;
+            border-color: white;
         }
 
         /* Section Headers */
@@ -175,13 +264,15 @@
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
+            font-weight: 800;
             margin-bottom: 1rem;
             color: var(--text-dark);
+            letter-spacing: -1px;
         }
 
         .section-header p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-light);
             max-width: 700px;
             margin: 0 auto;
@@ -195,56 +286,63 @@
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .feature-card {
-            background: white;
+            background: var(--card-bg);
             padding: 2rem;
-            border-radius: 10px;
+            border-radius: 16px;
             box-shadow: var(--shadow);
-            transition: all 0.3s;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
             box-shadow: var(--shadow-hover);
+            border-color: var(--primary-color);
         }
 
         .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
             color: var(--primary-color);
+            font-weight: 700;
         }
 
         .feature-card p {
             color: var(--text-light);
+            line-height: 1.7;
         }
 
         /* Performance Tables */
         .table-container {
             overflow-x: auto;
             margin-bottom: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            background: white;
-            border-radius: 10px;
+            background: var(--card-bg);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: var(--shadow);
         }
 
         th, td {
-            padding: 1rem;
+            padding: 1rem 1.2rem;
             text-align: left;
         }
 
         th {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             color: white;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
         }
 
         tr:nth-child(even) {
@@ -252,12 +350,21 @@
         }
 
         tr:hover {
-            background: #e0f2fe;
+            background: rgba(37, 99, 235, 0.07);
+        }
+
+        td {
+            color: var(--text-dark);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .best-result {
-            font-weight: bold;
+            font-weight: 700;
             color: var(--primary-color);
+        }
+
+        tr.highlight-row {
+            background: rgba(37, 99, 235, 0.1) !important;
         }
 
         /* Gallery Section */
@@ -268,19 +375,20 @@
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .gallery-item {
-            background: white;
-            border-radius: 10px;
+            background: var(--card-bg);
+            border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: all 0.3s;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
         }
 
         .gallery-item:hover {
-            transform: scale(1.03);
+            transform: scale(1.03) translateY(-4px);
             box-shadow: var(--shadow-hover);
         }
 
@@ -293,29 +401,33 @@
         .gallery-item .caption {
             padding: 1rem;
             text-align: center;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--text-dark);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            background: var(--card-bg);
         }
 
         /* Installation Section */
         .installation {
-            background: white;
+            background: var(--bg-white);
         }
 
         .code-block {
-            background: #1e293b;
+            background: var(--code-bg);
             color: #e2e8f0;
-            padding: 1.5rem;
-            border-radius: 10px;
+            padding: 1.75rem;
+            border-radius: 14px;
             overflow-x: auto;
             margin: 1rem 0;
             font-family: 'Courier New', monospace;
             box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .code-block code {
             font-size: 0.9rem;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* Citation Section */
@@ -324,19 +436,19 @@
         }
 
         .citation-box {
-            background: white;
+            background: var(--card-bg);
             padding: 2rem;
-            border-radius: 10px;
+            border-radius: 16px;
             box-shadow: var(--shadow);
-            border-left: 4px solid var(--primary-color);
+            border-left: 5px solid var(--primary-color);
         }
 
         /* Footer */
         footer {
-            background: var(--text-dark);
-            color: white;
+            background: #0a0a1a;
+            color: #94a3b8;
             text-align: center;
-            padding: 2rem 0;
+            padding: 2.5rem 0;
         }
 
         footer a {
@@ -352,7 +464,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -360,19 +472,28 @@
             }
         }
 
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
 
             .hero .subtitle {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
 
             nav ul {
-                gap: 1rem;
-                font-size: 0.9rem;
+                gap: 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .theme-toggle span {
+                display: none;
             }
 
             section {
@@ -405,23 +526,34 @@
         }
 
         /* GIF / Animation Section */
+        .gif-section {
+            background: var(--bg-white);
+            padding: 5rem 0;
+        }
+
+        .gif-section-hero {
+            background: linear-gradient(180deg, rgba(108,43,217,0.08) 0%, var(--bg-white) 100%);
+            padding: 4rem 0 5rem;
+        }
+
         .gif-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
             margin-top: 1.5rem;
         }
 
         .gif-item {
-            background: white;
-            border-radius: 10px;
+            background: var(--card-bg);
+            border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: all 0.3s;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
         }
 
         .gif-item:hover {
-            transform: scale(1.03);
+            transform: scale(1.03) translateY(-4px);
             box-shadow: var(--shadow-hover);
         }
 
@@ -434,9 +566,10 @@
         .gif-item .caption {
             padding: 1rem;
             text-align: center;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--text-dark);
             font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
         }
 
         /* Results section tables */
@@ -449,6 +582,25 @@
             color: var(--text-light);
             margin-top: 0.5rem;
         }
+
+        /* Section sub-headings */
+        .sub-heading {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* About image */
+        .about-image {
+            max-width: 100%;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .about-image:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
     </style>
 </head>
 <body>
@@ -457,6 +609,7 @@
         <div class="container">
             <div class="logo">PIBERT</div>
             <ul>
+                <li><a href="#animations">Animations</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#performance">Performance</a></li>
@@ -464,6 +617,12 @@
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#installation">Installation</a></li>
                 <li><a href="#citation">Citation</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                        <span class="icon">🌙</span>
+                        <span>Dark</span>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -488,6 +647,34 @@
         </div>
     </section>
 
+    <!-- Animated Predictions — Featured at Top -->
+    <section id="animations" class="gif-section gif-section-hero">
+        <div class="container">
+            <div class="section-header">
+                <h2>🌊 Live Predictions</h2>
+                <p>Side-by-side animations of ground truth vs. PIBERT predictions over time — Cylinder Wake benchmark</p>
+            </div>
+            <div class="gif-grid">
+                <div class="gif-item">
+                    <img src="figures_rpb_final/jcp_struct_fig15_timestep_predictions_u_cylinder_real.gif" alt="U-Velocity Animation">
+                    <div class="caption">🌊 U-Velocity Component (Cylinder Wake)</div>
+                </div>
+                <div class="gif-item">
+                    <img src="figures_rpb_final/jcp_struct_fig15_timestep_predictions_v_cylinder_real.gif" alt="V-Velocity Animation">
+                    <div class="caption">🌊 V-Velocity Component (Cylinder Wake)</div>
+                </div>
+                <div class="gif-item">
+                    <img src="figures_rpb_final/jcp_struct_fig15_timestep_predictions_uv_cylinder_real.gif" alt="UV Combined Animation">
+                    <div class="caption">🌊 UV Combined (Cylinder Wake)</div>
+                </div>
+                <div class="gif-item">
+                    <img src="figures_rpb_final/jcp_struct_fig15_timestep_predictions_omega_cylinder_real.gif" alt="Vorticity Animation">
+                    <div class="caption">🌀 Vorticity ω (Cylinder Wake)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about">
         <div class="container">
@@ -496,7 +683,7 @@
                 <p>A novel framework for solving multiscale partial differential equations (PDEs) that integrates hybrid spectral embeddings, physics-biased attention mechanisms, and self-supervised pretraining.</p>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
-                <img src="PIBERTAbstract.png" alt="PIBERT Abstract" style="max-width: 100%; border-radius: 10px; box-shadow: var(--shadow);">
+                <img src="FIGURE/pibert_methodology_figure%20(1).png" alt="PIBERT Methodology" class="about-image">
             </div>
         </div>
     </section>
@@ -545,7 +732,7 @@
                 <p>PIBERT demonstrates state-of-the-art performance across multiple benchmarks</p>
             </div>
             
-            <h3 style="margin-bottom: 1rem; color: var(--primary-color);">1D Reaction Equation</h3>
+            <h3 style="margin-bottom: 1rem;" class="sub-heading">1D Reaction Equation</h3>
             <div class="table-container">
                 <table>
                     <thead>
@@ -581,7 +768,7 @@
                             <td>0.0078</td>
                             <td>0.0060</td>
                         </tr>
-                        <tr style="background: #dbeafe;">
+                        <tr class="highlight-row">
                             <td class="best-result">PIBERT</td>
                             <td class="best-result">0.0061</td>
                             <td class="best-result">0.0074</td>
@@ -627,7 +814,7 @@
                             <td>0.0007</td>
                             <td>0.00003</td>
                         </tr>
-                        <tr style="background: #dbeafe;">
+                        <tr class="highlight-row">
                             <td class="best-result">PIBERT (Lite)</td>
                             <td class="best-result">0.0103</td>
                             <td class="best-result">0.0011</td>
@@ -648,7 +835,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="background: #dbeafe;">
+                        <tr class="highlight-row">
                             <td class="best-result">PIBERT (Full)</td>
                             <td class="best-result">0.4975</td>
                             <td class="best-result">1.3409</td>
@@ -746,7 +933,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="background: #dbeafe;">
+                        <tr class="highlight-row">
                             <td class="best-result">PIBERT</td>
                             <td class="best-result">0.06280</td>
                             <td class="best-result">0.05875</td>
@@ -813,7 +1000,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="background: #dbeafe;">
+                        <tr class="highlight-row">
                             <td class="best-result">PIBERT</td>
                             <td class="best-result">0.000206</td>
                             <td class="best-result">0.000270</td>
@@ -881,7 +1068,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="background: #dbeafe;">
+                        <tr class="highlight-row">
                             <td class="best-result">PIBERT</td>
                             <td class="best-result">0.03321</td>
                             <td class="best-result">0.09240</td>
@@ -954,7 +1141,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="background: #dbeafe;">
+                        <tr class="highlight-row">
                             <td class="best-result">PIBERT</td>
                             <td class="best-result">0.000103</td>
                             <td class="best-result">0.000309</td>
@@ -1147,8 +1334,8 @@
                 </div>
             </div>
 
-            <!-- GIF Animations -->
-            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Animated Predictions — Cylinder Wake Timesteps</h3>
+            <!-- GIF Animations (duplicated at top — see Animations section above) -->
+            <h3 style="text-align: center; margin-bottom: 2rem;" class="sub-heading">Animated Predictions — Cylinder Wake Timesteps</h3>
             <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Side-by-side comparisons of ground truth vs. PIBERT predictions over time</p>
             <div class="gif-grid" style="margin-bottom: 3rem;">
                 <div class="gif-item">
@@ -1310,6 +1497,35 @@ print(f"Prediction shape: {pred.shape}")</code>
     </footer>
 
     <script>
+        // Dark / Light Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const icon = themeToggle.querySelector('.icon');
+        const label = themeToggle.querySelector('span:last-child');
+
+        // Load saved preference
+        const savedTheme = localStorage.getItem('pibert-theme') || 'light';
+        if (savedTheme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+            icon.textContent = '☀️';
+            label.textContent = 'Light';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = html.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                html.removeAttribute('data-theme');
+                icon.textContent = '🌙';
+                label.textContent = 'Dark';
+                localStorage.setItem('pibert-theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                icon.textContent = '☀️';
+                label.textContent = 'Light';
+                localStorage.setItem('pibert-theme', 'dark');
+            }
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1326,8 +1542,8 @@ print(f"Prediction shape: {pred.shape}")</code>
 
         // Add animation on scroll
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.08,
+            rootMargin: '0px 0px -40px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -1335,15 +1551,17 @@ print(f"Prediction shape: {pred.shape}")</code>
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
+                    // Unobserve after first animation — intentional one-shot entrance effect
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // Observe all sections
-        document.querySelectorAll('.feature-card, .gallery-item, table').forEach(el => {
+        // Observe all animated elements
+        document.querySelectorAll('.feature-card, .gallery-item, .gif-item, table').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            el.style.transform = 'translateY(24px)';
+            el.style.transition = 'opacity 0.55s cubic-bezier(0.4,0,0.2,1), transform 0.55s cubic-bezier(0.4,0,0.2,1)';
             observer.observe(el);
         });
     </script>
