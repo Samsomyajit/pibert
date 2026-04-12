@@ -1,0 +1,71 @@
+[2026-03-14 15:35:07] INFO - Candidate pibert_refine_polish_b: params=1,560,232 init_ckpt=D:\PIBERT_JCP_final\pibert-cfdb-re300-600\runs_rpb_sweep_seed42\pibert_refine_polish_a\best.pt init_test_NMSE=0.059371 init_test_RelL2=0.243662
+[2026-03-14 15:35:07] INFO - Notes: Low-LR continuation from refine_polish_a with lighter physics regularization to squeeze global NMSE/RelL2.
+[2026-03-14 15:35:07] INFO - Config: {
+  "model": {
+    "name": "pibert",
+    "in_channels": 2,
+    "out_channels": 2,
+    "img_size": 64,
+    "patch_size": 4,
+    "embed_dim": 128,
+    "depth": 4,
+    "num_heads": 4,
+    "mlp_ratio": 4.0,
+    "fourier_modes": 16,
+    "param_dim": 16,
+    "lambda_att": 0.12,
+    "alpha_div": 1.0,
+    "alpha_mom": 1.0,
+    "dropout": 0.02,
+    "residual_skip": true,
+    "refine_hidden": 32
+  },
+  "training": {
+    "batch_size": 256,
+    "micro_batch_size": 128,
+    "lr": 5e-05,
+    "lr_min": 1e-07,
+    "warmup_epochs": 3,
+    "weight_decay": 2e-05,
+    "amp": true,
+    "num_workers": 0,
+    "pretrain_epochs": 50,
+    "finetune_epochs": 120,
+    "mask_ratio": 0.15,
+    "patience": 45
+  },
+  "loss": {
+    "lambda_div": 1.0,
+    "lambda_lap": 0.12,
+    "lambda_bnd": 0.002,
+    "lambda_reg": 5e-05,
+    "lambda_mpp": 1.0,
+    "lambda_ecp": 0.1
+  },
+  "data": {
+    "data_dir": "data/realpdebench",
+    "process": "cylinder",
+    "data_type": "real",
+    "field_key": null,
+    "img_size": 64,
+    "stride": 20,
+    "max_frames_per_traj": 200,
+    "train_ratio": 0.8,
+    "val_ratio": 0.1,
+    "normalize": true
+  }
+}
+[2026-03-14 15:35:28] INFO - [FT    1/120] loss=0.079893 best_val=0.047632 lr=3.33e-05 (21.0s)
+[2026-03-14 15:38:27] INFO - [FT   10/120] loss=0.079787 best_val=0.047429 lr=4.96e-05 (20.0s)
+[2026-03-14 15:42:04] INFO - [FT   20/120] loss=0.078997 best_val=0.047429 lr=4.74e-05 (20.0s)
+[2026-03-14 15:45:28] INFO - [FT   30/120] loss=0.078456 best_val=0.047336 lr=4.37e-05 (20.1s)
+[2026-03-14 15:48:43] INFO - [FT   40/120] loss=0.077880 best_val=0.046603 lr=3.87e-05 (20.1s)
+[2026-03-14 15:52:16] INFO - [FT   50/120] loss=0.077382 best_val=0.046181 lr=3.26e-05 (20.8s)
+[2026-03-14 15:55:45] INFO - [FT   60/120] loss=0.077008 best_val=0.046181 lr=2.61e-05 (20.3s)
+[2026-03-14 15:59:10] INFO - [FT   70/120] loss=0.076630 best_val=0.046181 lr=1.94e-05 (20.1s)
+[2026-03-14 16:02:26] INFO - [FT   80/120] loss=0.076304 best_val=0.046061 lr=1.32e-05 (20.2s)
+[2026-03-14 16:05:47] INFO - [FT   90/120] loss=0.075974 best_val=0.046026 lr=7.77e-06 (20.1s)
+[2026-03-14 16:09:26] INFO - [FT  100/120] loss=0.075881 best_val=0.045933 lr=3.61e-06 (20.1s)
+[2026-03-14 16:12:40] INFO - [FT  110/120] loss=0.075898 best_val=0.045888 lr=9.94e-07 (20.1s)
+[2026-03-14 16:16:04] INFO - [FT  120/120] loss=0.075856 best_val=0.045888 lr=1.00e-07 (20.2s)
+[2026-03-14 16:16:15] INFO - Final test for pibert_refine_polish_b: NMSE=0.058749 RelL2=0.242383 MAE=0.114475 DIV_MSE=0.027849

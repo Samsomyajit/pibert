@@ -52,3 +52,25 @@ env/
 venv/
 ENV/
 conda/
+
+# macOS / local scratch
+.DS_Store
+tmp/
+output/doc/
+
+# Large raw experiment artifacts kept out of git
+runs_rpb_*/**/best.pt
+runs_rpb_*/**/norm_stats.npz
+runs_rpb_*/**/predictions.npz
+
+# Paper/manuscript assets intentionally excluded from this branch
+paper.md
+supplementary_realpdebench.*
+PIBERT_supplementary_material_submission*.docx
+reports/*.docx
+reports/*.pdf
+elsarticle*
+references.bib
+figs.zip
+visualAbstract_pibert.pdf
+doc/

@@ -1,0 +1,11 @@
+{
+  "sample_idx": 998,
+  "included_baselines": [
+    "FNO2d",
+    "DeepONet2d",
+    "PITT",
+    "FourierFlow",
+    "PINN"
+  ],
+  "figure_stem": "jcp_struct_fig13_baselines_overview_cylinder_real"
+}

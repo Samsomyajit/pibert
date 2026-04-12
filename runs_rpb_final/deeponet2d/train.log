@@ -1,0 +1,8 @@
+[2026-03-11 21:44:17] INFO - DeepONet2d: 14527 train, 1791 val, 1990 test
+[2026-03-11 21:44:17] INFO - DeepONet2d: 150,674 parameters
+[2026-03-11 21:44:17] INFO - --- Fine-tuning (150 epochs) ---
+[2026-03-11 21:44:20] INFO - [FT    1/150] loss=0.918735 best_val=0.484373 lr=1.00e-04 (3.3s)
+[2026-03-11 21:46:20] INFO - [FT   50/150] loss=0.151855 best_val=0.212222 lr=4.08e-04 (2.8s)
+[2026-03-11 21:47:34] INFO - Early stop at epoch 81
+[2026-03-11 21:47:35] INFO - Test NMSE=0.198463, RelL2=0.445492
+[2026-03-11 21:47:51] INFO - Saved predictions: (1990, 2, 64, 64)

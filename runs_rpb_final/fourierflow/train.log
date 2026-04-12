@@ -1,0 +1,5 @@
+[2026-03-11 21:53:55] INFO - FourierFlow: 14527 train, 1791 val, 1990 test
+[2026-03-11 21:53:55] INFO - FourierFlow: 2,777,282 parameters
+[2026-03-11 21:53:55] INFO - --- Fine-tuning (150 epochs) ---
+[2026-03-11 21:54:12] INFO - [FT    1/150] loss=0.803254 best_val=0.899809 lr=1.00e-04 (17.3s)
+[2026-03-11 22:07:43] INFO - [FT   50/150] loss=0.050256 best_val=0.177474 lr=4.08e-04 (17.1s)

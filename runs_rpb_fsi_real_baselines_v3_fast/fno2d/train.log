@@ -1,0 +1,11 @@
+[2026-03-31 15:26:22] INFO - FNO2d: 5441 train, 2730 val, 2731 test
+[2026-03-31 15:26:22] INFO - FNO2d: process=fsi data_type=real field=uv channels=2
+[2026-03-31 15:26:23] INFO - FNO2d: 1,054,082 parameters
+[2026-03-31 15:26:24] INFO - --- Fine-tuning (180 epochs) ---
+[2026-03-31 15:26:35] INFO - [FT    1/180] loss=0.661165 best_val=0.366348 lr=1.00e-04 (11.1s)
+[2026-03-31 15:32:27] INFO - [FT   50/180] loss=0.000923 best_val=0.003171 lr=4.36e-04 (7.8s)
+[2026-03-31 15:38:23] INFO - [FT  100/180] loss=0.000561 best_val=0.002512 lr=2.32e-04 (7.8s)
+[2026-03-31 15:45:05] INFO - [FT  150/180] loss=0.000427 best_val=0.002264 lr=4.67e-05 (7.8s)
+[2026-03-31 15:48:45] INFO - [FT  180/180] loss=0.000409 best_val=0.002240 lr=1.00e-05 (7.7s)
+[2026-03-31 15:48:47] INFO - Test NMSE=0.002248, RelL2=0.047416
+[2026-03-31 15:49:07] INFO - Saved predictions: (2731, 2, 64, 64)

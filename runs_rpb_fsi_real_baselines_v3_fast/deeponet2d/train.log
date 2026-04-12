@@ -1,0 +1,11 @@
+[2026-03-31 15:55:47] INFO - DeepONet2d: 5441 train, 2730 val, 2731 test
+[2026-03-31 15:55:47] INFO - DeepONet2d: process=fsi data_type=real field=uv channels=2
+[2026-03-31 15:55:47] INFO - DeepONet2d: 150,674 parameters
+[2026-03-31 15:55:47] INFO - --- Fine-tuning (180 epochs) ---
+[2026-03-31 15:55:51] INFO - [FT    1/180] loss=0.855827 best_val=0.813423 lr=1.00e-04 (3.5s)
+[2026-03-31 15:58:00] INFO - [FT   50/180] loss=0.135973 best_val=0.141819 lr=4.36e-04 (3.1s)
+[2026-03-31 16:00:25] INFO - [FT  100/180] loss=0.108324 best_val=0.114921 lr=2.32e-04 (3.0s)
+[2026-03-31 16:02:38] INFO - [FT  150/180] loss=0.100049 best_val=0.106939 lr=4.67e-05 (3.0s)
+[2026-03-31 16:03:58] INFO - [FT  180/180] loss=0.098797 best_val=0.105713 lr=1.00e-05 (3.1s)
+[2026-03-31 16:03:58] INFO - Test NMSE=0.105176, RelL2=0.324309
+[2026-03-31 16:04:10] INFO - Saved predictions: (2731, 2, 64, 64)

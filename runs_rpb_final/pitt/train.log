@@ -1,0 +1,8 @@
+[2026-03-11 21:47:51] INFO - PITT: 14527 train, 1791 val, 1990 test
+[2026-03-11 21:47:51] INFO - PITT: 216,898 parameters
+[2026-03-11 21:47:51] INFO - --- Fine-tuning (150 epochs) ---
+[2026-03-11 21:47:56] INFO - [FT    1/150] loss=0.965287 best_val=0.923611 lr=1.00e-04 (5.3s)
+[2026-03-11 21:51:50] INFO - [FT   50/150] loss=0.079118 best_val=0.803630 lr=4.08e-04 (4.9s)
+[2026-03-11 21:53:30] INFO - Early stop at epoch 71
+[2026-03-11 21:53:30] INFO - Test NMSE=0.117288, RelL2=0.342473
+[2026-03-11 21:53:55] INFO - Saved predictions: (1990, 2, 64, 64)

@@ -1,0 +1,14 @@
+[2026-03-14 17:26:46] INFO - PINN: 14527 train, 1791 val, 1990 test
+[2026-03-14 17:26:46] INFO - PINN: process=cylinder data_type=real field=uv channels=2
+[2026-03-14 17:26:47] INFO - PINN: 21,250 parameters
+[2026-03-14 17:26:49] INFO - --- Fine-tuning (300 epochs) ---
+[2026-03-14 17:26:54] INFO - [FT    1/300] loss=0.890456 best_val=0.911213 lr=2.00e-04 (5.3s)
+[2026-03-14 17:43:46] INFO - PINN: 14527 train, 1791 val, 1990 test
+[2026-03-14 17:43:46] INFO - PINN: process=cylinder data_type=real field=uv channels=2
+[2026-03-14 17:43:47] INFO - PINN: 21,250 parameters
+[2026-03-14 17:43:49] INFO - --- Fine-tuning (300 epochs) ---
+[2026-03-14 17:43:54] INFO - [FT    1/300] loss=0.890456 best_val=0.911213 lr=2.00e-04 (4.9s)
+[2026-03-14 17:46:47] INFO - [FT   50/300] loss=0.389924 best_val=0.702772 lr=9.54e-04 (3.2s)
+[2026-03-14 17:48:06] INFO - Early stop at epoch 71
+[2026-03-14 17:48:06] INFO - Test NMSE=0.399384, RelL2=0.631968
+[2026-03-14 17:48:25] INFO - Saved predictions: (1990, 2, 64, 64)

@@ -1,0 +1,155 @@
+{
+  "assumptions": {
+    "evaluation_mode": "reconstructed one-step target sequences",
+    "pairs_per_trajectory": 199,
+    "num_probe_points": 16,
+    "probe_selection": "shared high-variance GT probes on u-channel",
+    "probe_points_yx": [
+      [
+        22,
+        20
+      ],
+      [
+        26,
+        20
+      ],
+      [
+        18,
+        21
+      ],
+      [
+        48,
+        21
+      ],
+      [
+        14,
+        22
+      ],
+      [
+        52,
+        22
+      ],
+      [
+        41,
+        23
+      ],
+      [
+        21,
+        24
+      ],
+      [
+        25,
+        24
+      ],
+      [
+        45,
+        24
+      ],
+      [
+        17,
+        25
+      ],
+      [
+        49,
+        26
+      ],
+      [
+        41,
+        27
+      ],
+      [
+        22,
+        28
+      ],
+      [
+        26,
+        28
+      ],
+      [
+        45,
+        28
+      ]
+    ],
+    "frequency_band_ratios": {
+      "low": [
+        0.0,
+        0.3333333333333333
+      ],
+      "mid": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "high": [
+        0.6666666666666666,
+        1.0
+      ]
+    }
+  },
+  "results": {
+    "PIBERT": {
+      "fRMSE_all": 0.024284765477445007,
+      "fRMSE_low": 0.05354211409172594,
+      "fRMSE_mid": 0.02142697741256265,
+      "fRMSE_high": 0.005536664476123644,
+      "FE": 8.137943137036041,
+      "KE": 0.00022212449031623204,
+      "MVPE": 0.0016028143444458901,
+      "num_trajectories": 10,
+      "timesteps_per_trajectory": 199,
+      "num_probe_points": 16,
+      "run_dir": "D:\\PIBERT_JCP_final\\pibert-cfdb-re300-600\\runs_rpb_final\\pibert_refine_polish_b"
+    },
+    "FNO2d": {
+      "fRMSE_all": 0.024537631369216016,
+      "fRMSE_low": 0.05507130552460886,
+      "fRMSE_mid": 0.02134606266995971,
+      "fRMSE_high": 0.004749729371008274,
+      "FE": 10.592292084903322,
+      "KE": 0.0002564832235779834,
+      "MVPE": 0.0031835995778329122,
+      "num_trajectories": 10,
+      "timesteps_per_trajectory": 199,
+      "num_probe_points": 16,
+      "run_dir": "D:\\PIBERT_JCP_final\\pibert-cfdb-re300-600\\runs_rpb_final\\fno2d"
+    },
+    "DeepONet2d": {
+      "fRMSE_all": 0.04474939765133446,
+      "fRMSE_low": 0.11905460112551172,
+      "fRMSE_mid": 0.029961786472857018,
+      "fRMSE_high": 0.00460442813263457,
+      "FE": 18.608445548032385,
+      "KE": 0.0009569099379378857,
+      "MVPE": 0.01431699700246392,
+      "num_trajectories": 10,
+      "timesteps_per_trajectory": 199,
+      "num_probe_points": 16,
+      "run_dir": "D:\\PIBERT_JCP_final\\pibert-cfdb-re300-600\\runs_rpb_final\\deeponet2d"
+    },
+    "PITT": {
+      "fRMSE_all": 0.034362385459121673,
+      "fRMSE_low": 0.07984239891671933,
+      "fRMSE_mid": 0.028907825571556377,
+      "fRMSE_high": 0.00471161347259545,
+      "FE": 11.018182305744343,
+      "KE": 0.0005644881632095321,
+      "MVPE": 0.007002738914709894,
+      "num_trajectories": 10,
+      "timesteps_per_trajectory": 199,
+      "num_probe_points": 16,
+      "run_dir": "D:\\PIBERT_JCP_final\\pibert-cfdb-re300-600\\runs_rpb_final\\pitt"
+    },
+    "FourierFlow": {
+      "fRMSE_all": 0.024469541759023175,
+      "fRMSE_low": 0.053864000845402785,
+      "fRMSE_mid": 0.021693591432617117,
+      "fRMSE_high": 0.004856697779533983,
+      "FE": 7.3762138331718505,
+      "KE": 0.00024051066505544595,
+      "MVPE": 0.0011750954741509122,
+      "num_trajectories": 10,
+      "timesteps_per_trajectory": 199,
+      "num_probe_points": 16,
+      "run_dir": "D:\\PIBERT_JCP_final\\pibert-cfdb-re300-600\\runs_rpb_final\\fourierflow"
+    }
+  }
+}

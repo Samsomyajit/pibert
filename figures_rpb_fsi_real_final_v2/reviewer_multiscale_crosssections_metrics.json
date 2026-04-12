@@ -1,0 +1,620 @@
+{
+  "anchor_runs_dir": "D:\\PIBERT_JCP_final\\pibert-cfdb-re300-600\\runs_rpb_fsi_real_bundle_v2",
+  "support_runs": [
+    "D:\\PIBERT_JCP_final\\pibert-cfdb-re300-600\\runs_rpb_fast",
+    "D:\\PIBERT_JCP_final\\pibert-cfdb-re300-600\\runs"
+  ],
+  "included_models": [
+    "PIBERT",
+    "FourierFlow",
+    "PINN",
+    "FNO2d",
+    "PITT",
+    "DeepONet2d"
+  ],
+  "excluded_incomplete_dirs": [],
+  "component": "u",
+  "component_label": "$|\\mathbf{u}|$",
+  "sample_idx": 1878,
+  "sample_strategy": "worst_midband",
+  "sample_selection": {
+    "score": 1.1416970959153652,
+    "valid": true,
+    "selection_mode": "slice_and_wake_preferred",
+    "median_baseline": {
+      "low": 0.13259753859047602,
+      "mid": 0.11602821963897571,
+      "high": 0.11930965882080181
+    },
+    "pibert_errors": {
+      "low": 0.00867442226741335,
+      "mid": 0.015677018251316035,
+      "high": 0.013593377540095038
+    },
+    "margins": {
+      "low": 0.12392311632306266,
+      "mid": 0.10035120138765967,
+      "high": 0.10571628128070677
+    }
+  },
+  "top_samples": [
+    {
+      "sample_idx": 349,
+      "score": 1.175990790697966,
+      "valid": true,
+      "mid_margin": 0.1142088013938828
+    },
+    {
+      "sample_idx": 1878,
+      "score": 1.1416970959153652,
+      "valid": true,
+      "mid_margin": 0.10035120138765967
+    },
+    {
+      "sample_idx": 1657,
+      "score": 1.033680630530782,
+      "valid": true,
+      "mid_margin": 0.0803498467887631
+    }
+  ],
+  "main_figure": {
+    "field_label": "$|\\mathbf{u}|$",
+    "slice_columns": [
+      11,
+      32,
+      52
+    ],
+    "slice_names": [
+      "Large-scale / near-body",
+      "Intermediate / wake-core",
+      "Fine-scale / far-wake"
+    ],
+    "slice_metrics": {
+      "PIBERT": {
+        "Large-scale / near-body": {
+          "mae": 0.01636265218257904,
+          "rel_l2": 0.010411938339497637
+        },
+        "Intermediate / wake-core": {
+          "mae": 0.02440265193581581,
+          "rel_l2": 0.016713625188755066
+        },
+        "Fine-scale / far-wake": {
+          "mae": 0.02906567044556141,
+          "rel_l2": 0.010556803302403512
+        }
+      },
+      "FourierFlow": {
+        "Large-scale / near-body": {
+          "mae": 0.022575711831450462,
+          "rel_l2": 0.013371115016756616
+        },
+        "Intermediate / wake-core": {
+          "mae": 0.03601030260324478,
+          "rel_l2": 0.02548765674775285
+        },
+        "Fine-scale / far-wake": {
+          "mae": 0.04849309101700783,
+          "rel_l2": 0.018795227206939744
+        }
+      },
+      "PINN": {
+        "Large-scale / near-body": {
+          "mae": 0.03272600471973419,
+          "rel_l2": 0.02119876275467199
+        },
+        "Intermediate / wake-core": {
+          "mae": 0.026588063687086105,
+          "rel_l2": 0.019745628347920294
+        },
+        "Fine-scale / far-wake": {
+          "mae": 0.04927941411733627,
+          "rel_l2": 0.02119842631379975
+        }
+      },
+      "FNO2d": {
+        "Large-scale / near-body": {
+          "mae": 0.15625929832458496,
+          "rel_l2": 0.07111429671394684
+        },
+        "Intermediate / wake-core": {
+          "mae": 0.17424120008945465,
+          "rel_l2": 0.10728410446021049
+        },
+        "Fine-scale / far-wake": {
+          "mae": 0.3098968267440796,
+          "rel_l2": 0.09783899503626561
+        }
+      },
+      "PITT": {
+        "Large-scale / near-body": {
+          "mae": 0.22826780378818512,
+          "rel_l2": 0.16650531938075486
+        },
+        "Intermediate / wake-core": {
+          "mae": 0.22798898816108704,
+          "rel_l2": 0.18608071214377356
+        },
+        "Fine-scale / far-wake": {
+          "mae": 0.3405168950557709,
+          "rel_l2": 0.13072005545755802
+        }
+      },
+      "DeepONet2d": {
+        "Large-scale / near-body": {
+          "mae": 0.2945515513420105,
+          "rel_l2": 0.16903528766227252
+        },
+        "Intermediate / wake-core": {
+          "mae": 0.3139760196208954,
+          "rel_l2": 0.24275292184794262
+        },
+        "Fine-scale / far-wake": {
+          "mae": 0.545830488204956,
+          "rel_l2": 0.21323325989593978
+        }
+      }
+    },
+    "shown_profile_models": [
+      "PIBERT",
+      "FourierFlow"
+    ],
+    "best_baseline_name": "FourierFlow",
+    "pibert_slice_ranks": {
+      "Large-scale / near-body": 1,
+      "Intermediate / wake-core": 1,
+      "Fine-scale / far-wake": 1
+    },
+    "pibert_slice_wins": 3,
+    "top_panel_variants": [
+      "heatmap",
+      "contour"
+    ],
+    "wake_line_statistics": {
+      "line_row": 39,
+      "line_columns": [
+        11,
+        32,
+        52
+      ],
+      "velocity_metrics": {
+        "PIBERT": {
+          "mae": 0.0019280325923677136,
+          "rel_l2": 0.014918656068153254
+        },
+        "FourierFlow": {
+          "mae": 0.0025529633777993666,
+          "rel_l2": 0.021880263182373225
+        },
+        "PINN": {
+          "mae": 0.003236344954860637,
+          "rel_l2": 0.026719965872706614
+        },
+        "FNO2d": {
+          "mae": 0.009357566311886722,
+          "rel_l2": 0.06747331261694671
+        },
+        "PITT": {
+          "mae": 0.03697442103225773,
+          "rel_l2": 0.32644244106495623
+        },
+        "DeepONet2d": {
+          "mae": 0.03994654146909972,
+          "rel_l2": 0.2916446760003235
+        }
+      },
+      "vorticity_metrics": {
+        "PIBERT": {
+          "mae": 0.0022952175615712075,
+          "rel_l2": 0.03497715196685119
+        },
+        "FourierFlow": {
+          "mae": 0.0030591584102150097,
+          "rel_l2": 0.047468643744393975
+        },
+        "PINN": {
+          "mae": 0.0034679923089600767,
+          "rel_l2": 0.056068369435546994
+        },
+        "FNO2d": {
+          "mae": 0.00403840884612773,
+          "rel_l2": 0.06360155653157738
+        },
+        "PITT": {
+          "mae": 0.035749017509710115,
+          "rel_l2": 0.5510470616348155
+        },
+        "DeepONet2d": {
+          "mae": 0.0423304755025187,
+          "rel_l2": 0.6843350459234482
+        }
+      }
+    }
+  },
+  "supplementary_figure": {
+    "selected_sample_band_errors": {
+      "PIBERT": {
+        "low": 0.00867442226741335,
+        "mid": 0.015677018251316035,
+        "high": 0.013593377540095038
+      },
+      "FourierFlow": {
+        "low": 0.020004331992602088,
+        "mid": 0.013938433837794776,
+        "high": 0.014391258594812358
+      },
+      "PINN": {
+        "low": 0.009679306717225344,
+        "mid": 0.017881778547379244,
+        "high": 0.010447484125167729
+      },
+      "FNO2d": {
+        "low": 0.24216344108165894,
+        "mid": 0.11602821963897571,
+        "high": 0.11930965882080181
+      },
+      "PITT": {
+        "low": 0.13259753859047602,
+        "mid": 0.2779622814500025,
+        "high": 0.6876291065912581
+      },
+      "DeepONet2d": {
+        "low": 0.2275654859380054,
+        "mid": 0.3827146261972418,
+        "high": 0.7960114844783608
+      }
+    },
+    "wavelet_group_nmse": {
+      "PIBERT": {
+        "Coarse": 0.0004047914197826685,
+        "Intermediate": 0.002303279237821698,
+        "Fine": 0.010503128132161995
+      },
+      "FourierFlow": {
+        "Coarse": 0.000666933356797017,
+        "Intermediate": 0.0035345120898758373,
+        "Fine": 0.012561047954174379
+      },
+      "PINN": {
+        "Coarse": 0.0009946908101028384,
+        "Intermediate": 0.003946376935346052,
+        "Fine": 0.01271790114697069
+      },
+      "FNO2d": {
+        "Coarse": 0.0026122961498913355,
+        "Intermediate": 0.005966499020966391,
+        "Fine": 0.015379494444156686
+      },
+      "PITT": {
+        "Coarse": 0.0027313018472341355,
+        "Intermediate": 0.5314598232507706,
+        "Fine": 0.6883425762255987
+      },
+      "DeepONet2d": {
+        "Coarse": 0.29951761628035456,
+        "Intermediate": 0.6277261028687159,
+        "Fine": 0.7872289965550104
+      }
+    }
+  },
+  "multisample_figure": {
+    "field_label": "$|\\mathbf{u}|$",
+    "samples": [
+      {
+        "sample_idx": 349,
+        "score": 1.175990790697966,
+        "valid": true,
+        "baseline_model": "PINN",
+        "mid_margin": 0.1142088013938828
+      },
+      {
+        "sample_idx": 1878,
+        "score": 1.1416970959153652,
+        "valid": true,
+        "baseline_model": "PINN",
+        "mid_margin": 0.10035120138765967
+      },
+      {
+        "sample_idx": 1657,
+        "score": 1.033680630530782,
+        "valid": true,
+        "baseline_model": "PINN",
+        "mid_margin": 0.0803498467887631
+      }
+    ],
+    "variants": [
+      "heatmap_profile_grid"
+    ],
+    "mode": "heatmap"
+  },
+  "multisample_contour_figure": {
+    "field_label": "$|\\mathbf{u}|$",
+    "samples": [
+      {
+        "sample_idx": 349,
+        "score": 1.175990790697966,
+        "valid": true,
+        "baseline_model": "PINN",
+        "mid_margin": 0.1142088013938828
+      },
+      {
+        "sample_idx": 1878,
+        "score": 1.1416970959153652,
+        "valid": true,
+        "baseline_model": "PINN",
+        "mid_margin": 0.10035120138765967
+      },
+      {
+        "sample_idx": 1657,
+        "score": 1.033680630530782,
+        "valid": true,
+        "baseline_model": "PINN",
+        "mid_margin": 0.0803498467887631
+      }
+    ],
+    "variants": [
+      "contour_profile_grid"
+    ],
+    "mode": "contour"
+  },
+  "multisample_complex_figure": {
+    "field_label": "$|\\mathbf{u}|$",
+    "samples": [
+      {
+        "sample_idx": 349,
+        "score": 1.175990790697966,
+        "valid": true,
+        "baseline_model": "PINN",
+        "mid_margin": 0.1142088013938828
+      },
+      {
+        "sample_idx": 1878,
+        "score": 1.1416970959153652,
+        "valid": true,
+        "baseline_model": "PINN",
+        "mid_margin": 0.10035120138765967
+      },
+      {
+        "sample_idx": 1657,
+        "score": 1.033680630530782,
+        "valid": true,
+        "baseline_model": "PINN",
+        "mid_margin": 0.0803498467887631
+      }
+    ],
+    "variants": [
+      "heatmap",
+      "contour",
+      "profiles"
+    ]
+  },
+  "aggregate_multiscale_summary": {
+    "common_samples": 2731,
+    "valid": true,
+    "pibert_band_rank_stats": {
+      "low": {
+        "wins": 1325,
+        "top2": 2328,
+        "win_rate": 0.4851702673013548,
+        "top2_rate": 0.8524350054924936
+      },
+      "mid": {
+        "wins": 1512,
+        "top2": 2349,
+        "win_rate": 0.5536433540827536,
+        "top2_rate": 0.8601244965214208
+      },
+      "high": {
+        "wins": 1347,
+        "top2": 2156,
+        "win_rate": 0.49322592456975467,
+        "top2_rate": 0.7894544123031857
+      }
+    },
+    "pibert_slice_rank_stats": {
+      "Large-scale / near-body": {
+        "wins": 2400,
+        "top2": 2670,
+        "win_rate": 0.8787989747345295,
+        "top2_rate": 0.977663859392164
+      },
+      "Intermediate / wake-core": {
+        "wins": 2084,
+        "top2": 2591,
+        "win_rate": 0.7630904430611498,
+        "top2_rate": 0.9487367264738191
+      },
+      "Fine-scale / far-wake": {
+        "wins": 2497,
+        "top2": 2692,
+        "win_rate": 0.9143170999633834,
+        "top2_rate": 0.9857195166605639
+      }
+    },
+    "band_error_summary": {
+      "PIBERT": {
+        "low": {
+          "mean": 0.0023319156315634248,
+          "median": 0.0015874242318651528
+        },
+        "mid": {
+          "mean": 0.008932918930290792,
+          "median": 0.008245063526797379
+        },
+        "high": {
+          "mean": 0.018028816153181526,
+          "median": 0.017253907984971863
+        }
+      },
+      "FourierFlow": {
+        "low": {
+          "mean": 0.0031244735397040154,
+          "median": 0.0022337182443457797
+        },
+        "mid": {
+          "mean": 0.011345048561615051,
+          "median": 0.010528706101610297
+        },
+        "high": {
+          "mean": 0.021870635535476086,
+          "median": 0.02063213306748415
+        }
+      },
+      "PINN": {
+        "low": {
+          "mean": 0.0032781514566851745,
+          "median": 0.0022237508311178274
+        },
+        "mid": {
+          "mean": 0.011488547445847336,
+          "median": 0.01048216814967102
+        },
+        "high": {
+          "mean": 0.01992535158038169,
+          "median": 0.01892283391374766
+        }
+      },
+      "FNO2d": {
+        "low": {
+          "mean": 0.03246076921552766,
+          "median": 0.013287136645887104
+        },
+        "mid": {
+          "mean": 0.021413015226168335,
+          "median": 0.01823617404609104
+        },
+        "high": {
+          "mean": 0.02654701867947006,
+          "median": 0.024088820033532306
+        }
+      },
+      "PITT": {
+        "low": {
+          "mean": 0.0495319396935287,
+          "median": 0.04315235999795862
+        },
+        "mid": {
+          "mean": 0.27813288602332364,
+          "median": 0.27732930218412283
+        },
+        "high": {
+          "mean": 0.7578701745991155,
+          "median": 0.7631473506546516
+        }
+      },
+      "DeepONet2d": {
+        "low": {
+          "mean": 0.09652717511152863,
+          "median": 0.07669313595466615
+        },
+        "mid": {
+          "mean": 0.5790281108963946,
+          "median": 0.5913566404031886
+        },
+        "high": {
+          "mean": 0.8740860016556287,
+          "median": 0.8824900524222489
+        }
+      }
+    },
+    "slice_rel_l2_summary": {
+      "PIBERT": {
+        "Large-scale / near-body": {
+          "mean": 0.009635452510369543,
+          "median": 0.00954289606810643
+        },
+        "Intermediate / wake-core": {
+          "mean": 0.013793711350321994,
+          "median": 0.01306838464239153
+        },
+        "Fine-scale / far-wake": {
+          "mean": 0.012169338051068387,
+          "median": 0.01169133182550216
+        }
+      },
+      "FourierFlow": {
+        "Large-scale / near-body": {
+          "mean": 0.011829629929047172,
+          "median": 0.01155442112986117
+        },
+        "Intermediate / wake-core": {
+          "mean": 0.015906978340815843,
+          "median": 0.015120789803348706
+        },
+        "Fine-scale / far-wake": {
+          "mean": 0.015545889274220594,
+          "median": 0.014963637207963421
+        }
+      },
+      "PINN": {
+        "Large-scale / near-body": {
+          "mean": 0.013363866581896566,
+          "median": 0.012876931883869602
+        },
+        "Intermediate / wake-core": {
+          "mean": 0.018345954643685082,
+          "median": 0.01699596048290245
+        },
+        "Fine-scale / far-wake": {
+          "mean": 0.018910522952878296,
+          "median": 0.017613762701046365
+        }
+      },
+      "FNO2d": {
+        "Large-scale / near-body": {
+          "mean": 0.027868296617536207,
+          "median": 0.023934808265394774
+        },
+        "Intermediate / wake-core": {
+          "mean": 0.03178525009073277,
+          "median": 0.02714193675823679
+        },
+        "Fine-scale / far-wake": {
+          "mean": 0.02969948341038291,
+          "median": 0.025617274286363068
+        }
+      },
+      "PITT": {
+        "Large-scale / near-body": {
+          "mean": 0.1559132733328412,
+          "median": 0.1501878667257214
+        },
+        "Intermediate / wake-core": {
+          "mean": 0.1667132965650659,
+          "median": 0.15951488680602255
+        },
+        "Fine-scale / far-wake": {
+          "mean": 0.16798373626533003,
+          "median": 0.1633739217803627
+        }
+      },
+      "DeepONet2d": {
+        "Large-scale / near-body": {
+          "mean": 0.19802978939292348,
+          "median": 0.19210312753999698
+        },
+        "Intermediate / wake-core": {
+          "mean": 0.2435318806366859,
+          "median": 0.23560951658620688
+        },
+        "Fine-scale / far-wake": {
+          "mean": 0.2461866813012952,
+          "median": 0.24124756829823182
+        }
+      }
+    }
+  },
+  "support_run_summaries": [
+    {
+      "runs_dir": "D:\\PIBERT_JCP_final\\pibert-cfdb-re300-600\\runs_rpb_fast",
+      "exists": false,
+      "status": "missing"
+    },
+    {
+      "runs_dir": "D:\\PIBERT_JCP_final\\pibert-cfdb-re300-600\\runs",
+      "exists": false,
+      "status": "missing"
+    }
+  ],
+  "caption_note": "Anchor dataset is runs_rpb_fsi_real_bundle_v2. Models shown are all complete runs in that folder. Additional support runs, if provided, are consistency checks rather than the main claim."
+}

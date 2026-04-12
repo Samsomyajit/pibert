@@ -10,6 +10,10 @@
 
 *PIBERT: A Physics-Informed Transformer with Hybrid Spectral Embeddings for Multiscale PDE Modeling*
 
+## Artifact Bundles
+
+The latest final figures, supplementary figures, and lightweight RealPDEBench result summaries are tracked in this branch. See [ARTIFACTS.md](ARTIFACTS.md) for the published bundle layout and for the list of manuscript files and oversized raw artifacts that are intentionally excluded from git.
+
 ## Introduction
 
 PIBERT (Physics-Informed BERT-style Transformer) is a novel framework for solving multiscale partial differential equations (PDEs) that integrates **hybrid spectral embeddings** (combining Fourier and Wavelet approaches), **physics-biased attention mechanisms**, and **self-supervised pretraining**. 

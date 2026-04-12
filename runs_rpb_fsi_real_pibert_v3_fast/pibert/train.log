@@ -1,0 +1,10 @@
+[2026-03-31 15:04:49] INFO - PIBERT: 5441 train, 2730 val, 2731 test
+[2026-03-31 15:04:49] INFO - PIBERT: process=fsi data_type=real field=uv channels=2
+[2026-03-31 15:04:49] INFO - PIBERT: 8,714,248 parameters
+[2026-03-31 15:04:49] INFO - PIBERT: warm-started weights from runs_rpb_fsi_real_pibert_v2\pibert\best.pt
+[2026-03-31 15:04:51] INFO - --- Fine-tuning (120 epochs) ---
+[2026-03-31 15:05:00] INFO - PIBERT: initial val NMSE from warm start = 0.000274
+[2026-03-31 15:05:49] INFO - [FT    1/120] loss=0.000253 best_val=0.000273 lr=3.57e-06 (49.2s)
+[2026-03-31 15:18:22] INFO - Early stop at epoch 20
+[2026-03-31 15:18:28] INFO - Test NMSE=0.000270, RelL2=0.016418
+[2026-03-31 15:18:44] INFO - Saved predictions: (2731, 2, 64, 64)

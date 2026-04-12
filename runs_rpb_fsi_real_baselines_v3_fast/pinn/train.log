@@ -1,0 +1,11 @@
+[2026-03-31 15:49:07] INFO - PINN: 5441 train, 2730 val, 2731 test
+[2026-03-31 15:49:07] INFO - PINN: process=fsi data_type=real field=uv channels=2
+[2026-03-31 15:49:07] INFO - PINN: 21,250 parameters
+[2026-03-31 15:49:07] INFO - --- Fine-tuning (240 epochs) ---
+[2026-03-31 15:49:10] INFO - [FT    1/240] loss=0.565219 best_val=0.120983 lr=1.60e-04 (3.0s)
+[2026-03-31 15:51:06] INFO - [FT   50/240] loss=0.000863 best_val=0.000607 lr=7.42e-04 (2.6s)
+[2026-03-31 15:53:09] INFO - [FT  100/240] loss=0.000657 best_val=0.000577 lr=5.37e-04 (3.2s)
+[2026-03-31 15:55:13] INFO - [FT  150/240] loss=0.000626 best_val=0.000577 lr=2.73e-04 (2.9s)
+[2026-03-31 15:55:28] INFO - Early stop at epoch 156
+[2026-03-31 15:55:28] INFO - Test NMSE=0.000580, RelL2=0.024076
+[2026-03-31 15:55:47] INFO - Saved predictions: (2731, 2, 64, 64)

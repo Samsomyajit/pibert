@@ -1,0 +1,8 @@
+[2026-03-11 21:29:39] INFO - FNO2d: 14527 train, 1791 val, 1990 test
+[2026-03-11 21:29:39] INFO - FNO2d: 1,054,082 parameters
+[2026-03-11 21:29:39] INFO - --- Fine-tuning (150 epochs) ---
+[2026-03-11 21:29:49] INFO - [FT    1/150] loss=0.849544 best_val=0.979732 lr=1.00e-04 (10.5s)
+[2026-03-11 21:37:53] INFO - [FT   50/150] loss=0.053499 best_val=0.863980 lr=4.08e-04 (10.2s)
+[2026-03-11 21:43:51] INFO - Early stop at epoch 86
+[2026-03-11 21:43:51] INFO - Test NMSE=0.060026, RelL2=0.245002
+[2026-03-11 21:44:17] INFO - Saved predictions: (1990, 2, 64, 64)
