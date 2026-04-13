@@ -81,13 +81,14 @@
         }
 
         nav .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            background: var(--hero-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo img {
+            height: 44px;
+            width: auto;
+            object-fit: contain;
         }
 
         nav ul {
@@ -607,7 +608,7 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">PIBERT</div>
+            <div class="logo"><img src="0327a34c-7711-4904-b4c2-8b5ae59e10e5.png" alt="PIBERT Logo"></div>
             <ul>
                 <li><a href="#animations">Animations</a></li>
                 <li><a href="#about">About</a></li>
