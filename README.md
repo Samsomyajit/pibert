@@ -1,14 +1,20 @@
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/Samsomyajit/pibert/main/SPFG-removebg-preview.png" alt="PIBERT Logo" width="180"/>
+
 # PIBERT: Physics-Informed BERT-style Transformer
 
-[![PyPI version](https://img.shields.io/pypi/v/pibert)](https://pypi.org/project/pibert/)
-[![Python Version](https://img.shields.io/pypi/pyversions/pibert)](https://pypi.org/project/pibert/)
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.jcp.2024.xxxx-blue)](https://doi.org/10.1016/j.jcp.2024.xxxx)
-[![arXiv](https://img.shields.io/badge/arXiv-2408.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2408.xxxxx)
+[![PyPI version](https://img.shields.io/pypi/v/pibert?style=flat-square)](https://pypi.org/project/pibert/)
+[![Python Version](https://img.shields.io/pypi/pyversions/pibert?style=flat-square)](https://pypi.org/project/pibert/)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat-square)](https://opensource.org/licenses/Apache-2.0)
+[![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.jcp.2024.xxxx-blue?style=flat-square)](https://doi.org/10.1016/j.jcp.2024.xxxx)
+[![SSRN](https://img.shields.io/badge/SSRN-6203487-2C5CC5.svg?style=flat-square&logo=bookstack&logoColor=white)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6203487)
 
 ![PIBERT Visual Abstract](https://github.com/Samsomyajit/pibert/blob/main/FIGURE/pibert_methodology_figure%20(1).png)
 
 *PIBERT: A Physics-Informed Transformer with Hybrid Spectral Embeddings for Multiscale PDE Modeling*
+
+</div>
 
 ## Artifact Bundles
 
