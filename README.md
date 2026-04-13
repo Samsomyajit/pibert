@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Samsomyajit/pibert/main/SPFG-removebg-preview.png" alt="PIBERT Logo" width="180"/>
+<img src="https://raw.githubusercontent.com/Samsomyajit/pibert/main/0327a34c-7711-4904-b4c2-8b5ae59e10e5.png" alt="PIBERT Logo" width="180"/>
 
 # PIBERT: Physics-Informed BERT-style Transformer
 
